@@ -6,13 +6,13 @@
 /*   By: miandrad <miandrad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 14:54:43 by miandrad          #+#    #+#             */
-/*   Updated: 2023/01/04 18:25:33 by miandrad         ###   ########.fr       */
+/*   Updated: 2023/01/05 14:49:55 by miandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-size_t	ft_strlen_gnl(const char *str, size_t n)
+size_t	ft_strlen_gnl(const char *str, int n)
 {
 	size_t	i;
 
@@ -85,7 +85,7 @@ char	*ft_substr(char const *str, unsigned int start, size_t len)
 	else
 		p = ft_calloc(ft_strlen_gnl(str, 0) - start + 1, sizeof(char));
 	if (!p)
-		return (NULL);
+		return (0);
 	while (str[start] && i < len && start < ft_strlen_gnl(str, 0))
 		p[i++] = str[start++];
 	p[i] = '\0';

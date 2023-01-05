@@ -6,7 +6,7 @@
 /*   By: miandrad <miandrad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 12:55:27 by miandrad          #+#    #+#             */
-/*   Updated: 2023/01/04 18:49:39 by miandrad         ###   ########.fr       */
+/*   Updated: 2023/01/05 17:56:33 by miandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,10 @@ int		keydown(int keycode, t_ptr *plr_m);
 int		keyup(int keycode, t_ptr *plr_m);
 int		walkying(t_ptr *plr_m);
 void	gameinit(t_ptr *game);
+int		close_com(t_ptr *game);
 
-char	**map_cpy(int fd, t_ptr *map);
+// map cpy and check;
+char	**map_cpy(int fd, t_ptr *map, char *path);
+int		wall_check(char **map, t_ptr *inf);
 
 #endif

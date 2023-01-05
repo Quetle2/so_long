@@ -6,13 +6,13 @@
 /*   By: miandrad <miandrad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 16:24:26 by miandrad          #+#    #+#             */
-/*   Updated: 2023/01/04 16:39:40 by miandrad         ###   ########.fr       */
+/*   Updated: 2023/01/05 18:05:05 by miandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "So_long.h"
 
-void	close_com(t_ptr *game)
+int	close_com(t_ptr *game)
 {
 	mlx_destroy_window(game->mlx_ptr, game->win_ptr);
 	mlx_destroy_display(game->mlx_ptr);
@@ -22,6 +22,8 @@ void	close_com(t_ptr *game)
 
 void	gameinit(t_ptr *game)
 {
+	game->m_hgt = 0;
+	game->m_wdt = 0;
 	game->a = 0;
 	game->d = 0;
 	game->s = 0;
@@ -30,12 +32,25 @@ void	gameinit(t_ptr *game)
 	game->win_ptr = NULL;
 }
 
-int	main(void)
+int	main(int argc, char **argv)
 {
 	t_ptr	*inf;
+	char	**map;
+	int		i;
+	int		fd;
 
+	i = 0;
 	inf = malloc(sizeof(t_ptr));
 	gameinit(inf);
+	fd = open(argv[1], O_RDONLY);
+	map = map_cpy(fd, inf, argv[1]);
+	while (map[i])
+	{
+		printf("%s", map[i]);
+		i++;
+	}
+	if (wall_check(map, inf))
+		printf("Yey, Deste lhe forte\n");
 	inf->mlx_ptr = mlx_init();
 	inf->win_ptr = mlx_new_window(inf->mlx_ptr, 1000, 800, "ola");
 	if (!inf->win_ptr)
@@ -50,43 +65,3 @@ int	main(void)
 	mlx_loop(inf->mlx_ptr);
 }
 
-int	keydown(int keycode, t_ptr *plr_m)
-{
-	if (keycode == 'a')
-		plr_m->a = 1;
-	else if (keycode == 'w')
-		plr_m->w = 1;
-	else if (keycode == 's')
-		plr_m->s = 1;
-	else if (keycode == 'd')
-		plr_m->d = 1;
-	else if (keycode == 65307)
-		close_com(plr_m);
-	return (0);
-}
-
-int	keyup(int keycode, t_ptr *plr_m)
-{
-	if (keycode == 'a')
-		plr_m->a = 0;
-	if (keycode == 'w')
-		plr_m->w = 0;
-	if (keycode == 's')
-		plr_m->s = 0;
-	if (keycode == 'd')
-		plr_m->d = 0;
-	return (0);
-}
-
-int	walkying(t_ptr *plr_m)
-{
-	if (plr_m->a == 1)
-		write(1, "a", 1);
-	if (plr_m->w == 1)
-		write(1, "w", 1);
-	if (plr_m->s == 1)
-		write(1, "s", 1);
-	if (plr_m->d == 1)
-		write(1, "d", 1);
-	return (0);
-}
