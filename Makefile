@@ -6,7 +6,7 @@
 #    By: miandrad <miandrad@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/07 13:59:27 by miandrad          #+#    #+#              #
-#    Updated: 2023/01/05 18:04:40 by miandrad         ###   ########.fr        #
+#    Updated: 2023/01/06 13:52:35 by miandrad         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,9 +16,6 @@ CC = cc
 
 RM = rm -f
 
-
-
-FT_MAP = map_checker.c 
 
 MAIN_SRC = main.c wlaking.c
 
@@ -38,7 +35,7 @@ all:
 run:	all
 	./a.out map.ber
 
-map:
+path:
 	cc $(addprefix map_checker/,$(MAP_SRC)) $(addprefix get_next_line_100/,$(GNL_SRC)) && ./a.out map.ber
 
 NAME:

@@ -6,7 +6,7 @@
 /*   By: miandrad <miandrad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 14:54:26 by miandrad          #+#    #+#             */
-/*   Updated: 2023/01/05 13:10:50 by miandrad         ###   ########.fr       */
+/*   Updated: 2023/01/06 15:18:26 by miandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,4 +29,3 @@ char	*ft_substr(char const *str, unsigned int start, size_t len);
 void	*ft_calloc(size_t noob, size_t size);
 
 #endif
-
