@@ -6,7 +6,7 @@
 /*   By: miandrad <miandrad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 12:55:27 by miandrad          #+#    #+#             */
-/*   Updated: 2023/01/06 17:00:59 by miandrad         ###   ########.fr       */
+/*   Updated: 2023/01/10 15:02:23 by miandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ typedef struct s_info
 		int		height;
 		int		width;
 		int		food;
+		int		end_x;
+		int		end_y;
 	}map;
 	struct s_ptr
 	{
@@ -36,6 +38,8 @@ typedef struct s_info
 		int		a;
 		int		s;
 		int		d;
+		int		x;
+		int		y;
 	}plr;
 	int	index;
 }t_info;
@@ -50,5 +54,6 @@ int		close_com(t_info *game);
 char	**map_cpy(int fd, t_info *map, char *path);
 int		wall_check(char **map, t_info *inf);
 int		check_cpe(char **map, t_info *inf);
+int		check_path(int i, int j, t_info *inf, char **map);
 
 #endif

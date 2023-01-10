@@ -6,7 +6,7 @@
 /*   By: miandrad <miandrad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 17:11:16 by miandrad          #+#    #+#             */
-/*   Updated: 2023/01/06 18:17:12 by miandrad         ###   ########.fr       */
+/*   Updated: 2023/01/10 17:26:55 by miandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,36 +39,66 @@ int	wall_check(char **map, t_info *inf)
 
 int	check_cpe(char **map, t_info *inf)
 {
-	int	i;
 	int	j;
 	int	p;
 	int	e;
 
-	i = 0;
+	inf->index = 0;
 	p = 0;
 	e = 0;
-	while (map[i])
+	while (map[inf->index])
 	{
 		j = 0;
-		while (map[i][j])
+		while (map[inf->index][j])
 		{
-			if (map[i][j] != 'C' && map[i][j] != 'P' && map[i][j] != 'E'
-				&& map[i][j] != '0' && map[i][j] != '1' && map[i][j] != '\n')
+			if (map[inf->index][j] != 'C' && map[inf->index][j] != 'P'
+				&& map[inf->index][j] != 'E' && map[inf->index][j] != '0'
+				&& map[inf->index][j] != '1' && map[inf->index][j] != '\n')
 				return (0);
-			if (map[i][j] == 'C')
+			if (map[inf->index][j] == 'C')
 				inf->map.food++;
-			if (map[i][j] == 'P')
+			if (map[inf->index][j] == 'P')
+			{
 				p++;
-			if (map[i][j] == 'E')
+				inf->plr.x = j;
+				inf->plr.y = inf->index;
+			}
+			if (map[inf->index][j] == 'E')
+			{
 				e++;
+				inf->map.end_x = j - 1;
+				inf->map.end_y = inf->index;
+			}
 			j++;
 		}
-		i++;
+		inf->index++;
 	}
 	if (inf->map.food != 0 && p == 1 && e == 1)
 	{
-		printf("Yass\n");
+		if (check_path(inf->plr.y, inf->plr.x, inf, map))
+			return (1);
+	}
+	return (0);
+}
+
+int	check_path(int i, int j, t_info *inf, char **map)
+{
+	printf("end x : %d\nend y: %d\ncurr x: %d\ncurr y: %d\n", inf->map.end_x, inf->map.end_y, j, i);
+	if (j == inf->map.end_x && i == inf->map.end_y)
+	{
 		return (1);
+	}
+	if (map[i][j] == '0' ||  map[i][j] == 'P' || map[i][j] == 'C')
+	{
+		if (check_path(i, j + 1, inf, map))
+			return (1);
+		if (check_path(i - 1, j, inf, map))
+			return (1);
+		if (check_path(i, j - 1, inf, map))
+			return (1);
+		if (check_path(i + 1, j, inf, map))
+			return (1);
+		map[i][j] = '1';
 	}
 	return (0);
 }
