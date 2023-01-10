@@ -6,7 +6,7 @@
 /*   By: miandrad <miandrad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 17:11:16 by miandrad          #+#    #+#             */
-/*   Updated: 2023/01/10 17:26:55 by miandrad         ###   ########.fr       */
+/*   Updated: 2023/01/10 18:34:42 by miandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,22 +83,22 @@ int	check_cpe(char **map, t_info *inf)
 
 int	check_path(int i, int j, t_info *inf, char **map)
 {
-	printf("end x : %d\nend y: %d\ncurr x: %d\ncurr y: %d\n", inf->map.end_x, inf->map.end_y, j, i);
-	if (j == inf->map.end_x && i == inf->map.end_y)
-	{
-		return (1);
-	}
+	printf("curr x: %d\ncurr y: %d\n", inf->map.end_x, inf->map.end_y, j, i);
+	// if (j == inf->map.end_x && i == inf->map.end_y)
+	// {
+	// 	return (1);
+	// }
 	if (map[i][j] == '0' ||  map[i][j] == 'P' || map[i][j] == 'C')
 	{
-		if (check_path(i, j + 1, inf, map))
-			return (1);
-		if (check_path(i - 1, j, inf, map))
-			return (1);
+		map[i][j] = '-';
 		if (check_path(i, j - 1, inf, map))
 			return (1);
 		if (check_path(i + 1, j, inf, map))
 			return (1);
-		map[i][j] = '1';
+		if (check_path(i, j + 1, inf, map))
+			return (1);
+		if (check_path(i - 1, j, inf, map))
+			return (1);
 	}
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: miandrad <miandrad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 16:24:26 by miandrad          #+#    #+#             */
-/*   Updated: 2023/01/06 18:18:15 by miandrad         ###   ########.fr       */
+/*   Updated: 2023/01/10 18:01:22 by miandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ void	gameinit(t_info *inf)
 	inf->plr.w = 0;
 	inf->ptr.mlx_ptr = NULL;
 	inf->ptr.win_ptr = NULL;
+	inf->index = 0;
 }
 
 int	main(int argc, char **argv)
@@ -43,14 +44,14 @@ int	main(int argc, char **argv)
 	gameinit(inf);
 	fd = open(argv[1], O_RDONLY);
 	map = map_cpy(fd, inf, argv[1]);
+	if (wall_check(map, inf))
+		printf("Yey, Deste lhe forte\n");
 	inf->index = 0;
 	while (map[inf->index])
 	{
 		printf("%s", map[inf->index]);
 		inf->index++;
 	}
-	if (wall_check(map, inf))
-		printf("Yey, Deste lhe forte\n");
 	inf->ptr.mlx_ptr = mlx_init();
 	inf->ptr.win_ptr = mlx_new_window(inf->ptr.mlx_ptr, 1000, 800, "ola");
 	if (!inf->ptr.win_ptr)
