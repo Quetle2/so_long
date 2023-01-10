@@ -15,7 +15,7 @@
 
 # include <fcntl.h>
 # include "get_next_line_100/get_next_line.h"
-# include "/nfs/homes/miandrad/Desktop/so_long/minilibx-linux/mlx.h"
+# include "minilibx-linux/mlx.h"
 
 typedef struct s_info
 {
