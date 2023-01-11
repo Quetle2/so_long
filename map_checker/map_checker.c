@@ -6,98 +6,102 @@
 /*   By: miandrad <miandrad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 17:11:16 by miandrad          #+#    #+#             */
-/*   Updated: 2023/01/10 18:34:42 by miandrad         ###   ########.fr       */
+/*   Updated: 2023/01/11 18:03:35 by miandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../So_long.h"
 
-int	wall_check(char **map, t_info *inf)
+int	wall_check(t_info *inf)
 {
 	int	i;
 	int	j;
 
 	i = 0;
-	j = ft_strlen_gnl(map[0], 1) - 1;
+	j = ft_strlen_gnl(inf->matrix[0], 1) - 1;
 	while (i <= j)
 	{
-		if (map[0][i] != '1' || map[inf->map.height - 1][i] != '1')
+		if (inf->matrix[0][i] != '1'
+		|| inf->matrix[inf->map.height - 1][i] != '1')
 			return (0);
 		i++;
 	}
 	i = 1;
 	while (i < inf->map.height)
 	{
-		if ((ft_strlen_gnl(map[i], 1) - 1) != j)
+		if ((int)(ft_strlen_gnl(inf->matrix[i], 1) - 1) != j)
 			return (0);
-		if (map[i][0] != '1' || map[i][j] != '1')
+		if (inf->matrix[i][0] != '1' || inf->matrix[i][j] != '1')
 			return (0);
 		i++;
 	}
-	return (check_cpe(map, inf));
+	return (check_cpe(inf));
 }
 
-int	check_cpe(char **map, t_info *inf)
+int	check_cpe(t_info *inf)
 {
 	int	j;
 	int	p;
 	int	e;
 
-	inf->index = 0;
+	inf->i = 0;
 	p = 0;
 	e = 0;
-	while (map[inf->index])
+	while (inf->matrix[inf->i])
 	{
 		j = 0;
-		while (map[inf->index][j])
+		while (inf->matrix[inf->i][j])
 		{
-			if (map[inf->index][j] != 'C' && map[inf->index][j] != 'P'
-				&& map[inf->index][j] != 'E' && map[inf->index][j] != '0'
-				&& map[inf->index][j] != '1' && map[inf->index][j] != '\n')
+			if (inf->matrix[inf->i][j] != 'C' && inf->matrix[inf->i][j] != 'P'
+				&& inf->matrix[inf->i][j] != 'E'
+				&& inf->matrix[inf->i][j] != '0'
+				&& inf->matrix[inf->i][j] != '1'
+				&& inf->matrix[inf->i][j] != '\n')
 				return (0);
-			if (map[inf->index][j] == 'C')
+			if (inf->matrix[inf->i][j] == 'C')
 				inf->map.food++;
-			if (map[inf->index][j] == 'P')
+			if (inf->matrix[inf->i][j] == 'P')
 			{
 				p++;
 				inf->plr.x = j;
-				inf->plr.y = inf->index;
+				inf->plr.y = inf->i;
 			}
-			if (map[inf->index][j] == 'E')
+			if (inf->matrix[inf->i][j] == 'E')
 			{
 				e++;
 				inf->map.end_x = j - 1;
-				inf->map.end_y = inf->index;
+				inf->map.end_y = inf->i;
 			}
 			j++;
 		}
-		inf->index++;
+		inf->i++;
 	}
 	if (inf->map.food != 0 && p == 1 && e == 1)
 	{
-		if (check_path(inf->plr.y, inf->plr.x, inf, map))
+		if (check_path(inf->plr.y, inf->plr.x, inf))
 			return (1);
 	}
 	return (0);
 }
 
-int	check_path(int i, int j, t_info *inf, char **map)
+int	check_path(int i, int j, t_info *inf)
 {
-	printf("curr x: %d\ncurr y: %d\n", inf->map.end_x, inf->map.end_y, j, i);
+	printf("curr x: %d\ncurr y: %d\n", j, i);
 	// if (j == inf->map.end_x && i == inf->map.end_y)
 	// {
 	// 	return (1);
 	// }
-	if (map[i][j] == '0' ||  map[i][j] == 'P' || map[i][j] == 'C')
+	if (inf->matrix[i][j] == '0' ||  inf->matrix[i][j] == 'P' || inf->matrix[i][j] == 'C')
 	{
-		map[i][j] = '-';
-		if (check_path(i, j - 1, inf, map))
+		if (inf->matrix[i][j] != 'P')
+			inf->matrix[i][j] = '-';
+		if (check_path(i, j - 1, inf))
 			return (1);
-		if (check_path(i + 1, j, inf, map))
+		if (check_path(i + 1, j, inf))
 			return (1);
-		if (check_path(i, j + 1, inf, map))
+		if (check_path(i, j + 1, inf))
 			return (1);
-		if (check_path(i - 1, j, inf, map))
+		if (check_path(i - 1, j, inf))
 			return (1);
 	}
 	return (0);

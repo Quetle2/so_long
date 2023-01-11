@@ -6,7 +6,7 @@
 /*   By: miandrad <miandrad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 12:55:27 by miandrad          #+#    #+#             */
-/*   Updated: 2023/01/10 15:02:23 by miandrad         ###   ########.fr       */
+/*   Updated: 2023/01/11 17:58:54 by miandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,13 @@
 # define SO_LONG_H
 
 # include <fcntl.h>
+# include "ft_printf_100/ft_printf.h"
 # include "get_next_line_100/get_next_line.h"
 # include "/nfs/homes/miandrad/Desktop/so_long/minilibx-linux/mlx.h"
 
 typedef struct s_info
 {
+	char		**matrix;
 	struct s_map
 	{
 		int		height;
@@ -31,6 +33,7 @@ typedef struct s_info
 	{
 		void	*win_ptr;
 		void	*mlx_ptr;
+		void	*img_ptr;
 	}ptr;
 	struct s_plr
 	{
@@ -40,20 +43,25 @@ typedef struct s_info
 		int		d;
 		int		x;
 		int		y;
+		int		p_x;
+		int		p_y;
 	}plr;
-	int	index;
+	int			i;
+	int			j;
+	int			pixel;
 }t_info;
 
 int		keydown(int keycode, t_info *plr_m);
 int		keyup(int keycode, t_info *plr_m);
+void	img_to_window(t_info *inf);
 int		walkying(t_info *plr_m);
 void	gameinit(t_info *game);
 int		close_com(t_info *game);
 
 // map cpy and check;
 char	**map_cpy(int fd, t_info *map, char *path);
-int		wall_check(char **map, t_info *inf);
-int		check_cpe(char **map, t_info *inf);
-int		check_path(int i, int j, t_info *inf, char **map);
+int		wall_check(t_info *inf);
+int		check_cpe(t_info *inf);
+int		check_path(int i, int j, t_info *inf);
 
 #endif
