@@ -6,7 +6,7 @@
 /*   By: miandrad <miandrad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 16:24:26 by miandrad          #+#    #+#             */
-/*   Updated: 2023/01/11 18:24:51 by miandrad         ###   ########.fr       */
+/*   Updated: 2023/01/11 19:24:01 by miandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ int	close_com(t_info *inf)
 	mlx_destroy_window(inf->ptr.mlx_ptr, inf->ptr.win_ptr);
 	mlx_destroy_display(inf->ptr.mlx_ptr);
 	free(inf->ptr.mlx_ptr);
+	free(inf->matrix);
 	exit (0);
 }
 
@@ -90,6 +91,7 @@ void	img_to_window(t_info *inf)
 		{
 			inf->ptr.img_ptr = mlx_xpm_file_to_image(inf->ptr.mlx_ptr, "images/0_ch]ao.xpm", &inf->pixel, &inf->pixel);
 			mlx_put_image_to_window(inf->ptr.mlx_ptr, inf->ptr.win_ptr, inf->ptr.img_ptr, inf->j * 64, inf->i * 64);
+			free(inf->ptr.img_ptr);
 			// if (map[inf->i][inf->j] == '1')
 			// 	//inf->ptr.img_ptr = mlx_xpm_file_to_image(inf->ptr.mlx_ptr, "images/1.xpm", &inf->pixel, &inf->pixel);
 			// if (map[inf->i][inf->j] == '0')

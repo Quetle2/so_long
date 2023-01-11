@@ -6,7 +6,7 @@
 #    By: miandrad <miandrad@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/07 13:59:27 by miandrad          #+#    #+#              #
-#    Updated: 2023/01/11 18:30:20 by miandrad         ###   ########.fr        #
+#    Updated: 2023/01/11 19:07:30 by miandrad         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,7 +38,7 @@ run:	all
 
 valgrind:	all
 	$(CC) -g $(addprefix map_checker/,$(MAP_SRC)) $(addprefix get_next_line_100/,$(GNL_SRC)) && ./a.out map.ber
-	valgrind --leak-check=yes --log-file=valgrind.rpt ./a.out
+	valgrind --leak-check=yes --leak-check=full ./a.out map.ber
 path:
 	$(CC) -g $(addprefix map_checker/,$(MAP_SRC)) $(addprefix get_next_line_100/,$(GNL_SRC)) && ./a.out map.ber
 	valgrind --leak-check=yes --log-file=valgrind.rpt a.out
