@@ -6,7 +6,7 @@
 /*   By: miandrad <miandrad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 16:24:26 by miandrad          #+#    #+#             */
-/*   Updated: 2023/01/11 18:05:55 by miandrad         ###   ########.fr       */
+/*   Updated: 2023/01/11 18:24:51 by miandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,11 +94,11 @@ void	img_to_window(t_info *inf)
 			// 	//inf->ptr.img_ptr = mlx_xpm_file_to_image(inf->ptr.mlx_ptr, "images/1.xpm", &inf->pixel, &inf->pixel);
 			// if (map[inf->i][inf->j] == '0')
 			// 	//inf->ptr.img_ptr = mlx_xpm_file_to_image(inf->ptr.mlx_ptr, "images/0.xpm", &inf->pixel, &inf->pixel);
-			if (inf->matrix[inf->i][inf->j] == 'P')
-					{
-						inf->ptr.img_ptr = mlx_xpm_file_to_image(inf->ptr.mlx_ptr, "images/bitfuul-image(1).xpm", &inf->pixel, &inf->pixel);
-						mlx_put_image_to_window(inf->ptr.mlx_ptr, inf->ptr.win_ptr, inf->ptr.img_ptr, inf->plr.p_x, inf->plr.p_y);
-					}
+			// if (inf->matrix[inf->i][inf->j] == 'P')
+			// 		{
+			// 			inf->ptr.img_ptr = mlx_xpm_file_to_image(inf->ptr.mlx_ptr, "images/bitfuul-image(1).xpm", &inf->pixel, &inf->pixel);
+			// 			mlx_put_image_to_window(inf->ptr.mlx_ptr, inf->ptr.win_ptr, inf->ptr.img_ptr, inf->plr.p_x, inf->plr.p_y);
+			// 		}
 			// if (map[inf->i][inf->j] == 'C')
 			// 	//inf->ptr.img_ptr = mlx_xpm_file_to_image(inf->ptr.mlx_ptr, "images/c.xpm", &inf->pixel, &inf->pixel);
 			// if (map[inf->i][inf->j] == 'E')
