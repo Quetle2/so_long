@@ -6,7 +6,7 @@
 /*   By: miandrad <miandrad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 12:55:27 by miandrad          #+#    #+#             */
-/*   Updated: 2023/01/11 17:58:54 by miandrad         ###   ########.fr       */
+/*   Updated: 2023/01/12 15:04:50 by miandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,11 @@ typedef struct s_info
 	struct s_ptr
 	{
 		void	*win_ptr;
-		void	*mlx_ptr;
-		void	*img_ptr;
+		void	*mlx;
+		void	*i_floor;
+		void	*i_plr;
+		void	*i_wall;
+		void	*i_exit;
 	}ptr;
 	struct s_plr
 	{
@@ -53,7 +56,6 @@ typedef struct s_info
 
 int		keydown(int keycode, t_info *plr_m);
 int		keyup(int keycode, t_info *plr_m);
-void	img_to_window(t_info *inf);
 int		walkying(t_info *plr_m);
 void	gameinit(t_info *game);
 int		close_com(t_info *game);
@@ -63,5 +65,9 @@ char	**map_cpy(int fd, t_info *map, char *path);
 int		wall_check(t_info *inf);
 int		check_cpe(t_info *inf);
 int		check_path(int i, int j, t_info *inf);
+
+// img display
+void	sprite_atribution(t_info *inf);
+void	img_to_window(t_info *inf);
 
 #endif

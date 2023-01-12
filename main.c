@@ -6,7 +6,7 @@
 /*   By: miandrad <miandrad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 16:24:26 by miandrad          #+#    #+#             */
-/*   Updated: 2023/01/12 13:15:55 by miandrad         ###   ########.fr       */
+/*   Updated: 2023/01/12 15:16:03 by miandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,10 @@
 
 int	close_com(t_info *inf)
 {
-	mlx_destroy_window(inf->ptr.mlx_ptr, inf->ptr.win_ptr);
-	mlx_destroy_display(inf->ptr.mlx_ptr);
-	free(inf->ptr.mlx_ptr);
+	mlx_destroy_image(inf->ptr.mlx, inf->ptr.i_floor);
+	mlx_destroy_window(inf->ptr.mlx, inf->ptr.win_ptr);
+	mlx_destroy_display(inf->ptr.mlx);
+	free(inf->ptr.mlx);
 	free(inf->matrix);
 	exit (0);
 }
@@ -34,9 +35,9 @@ void	gameinit(t_info *inf)
 	inf->plr.y = 0;
 	inf->plr.p_x = 0;
 	inf->plr.p_y = 0;
-	inf->ptr.mlx_ptr = NULL;
+	inf->ptr.mlx = NULL;
 	inf->ptr.win_ptr = NULL;
-	inf->ptr.img_ptr = NULL;
+	inf->ptr.i_floor = NULL;
 	inf->i = 0;
 	inf->j = 0;
 	inf->pixel = 64;
@@ -64,22 +65,22 @@ int	main(int argc, char **argv)
 		ft_printf("%s", inf.matrix[inf.i]);
 		inf.i++;
 	}
-	inf.ptr.mlx_ptr = mlx_init();
-	inf.ptr.win_ptr = mlx_new_window(inf.ptr.mlx_ptr, (inf.map.width) * 64,
+	sprite_atribution(&inf);
+	inf.ptr.mlx = mlx_init();
+	inf.ptr.win_ptr = mlx_new_window(inf.ptr.mlx, (inf.map.width) * 64,
 			(inf.map.height) * 64, "ola");
-	inf.ptr.img_ptr = mlx_new_image(inf.ptr.mlx_ptr, (inf.map.width) * 64,
+	inf.ptr.i_floor = mlx_new_image(inf.ptr.mlx, (inf.map.width) * 64,
 			(inf.map.height) * 64);
 	if (!inf.ptr.win_ptr)
 	{
-		free (inf.ptr.mlx_ptr);
+		free (inf.ptr.mlx);
 		return (0);
 	}
 	mlx_hook(inf.ptr.win_ptr, 2, 1L << 0, keydown, &inf);
 	mlx_hook(inf.ptr.win_ptr, 3, 1L << 1, keyup, &inf);
 	mlx_hook(inf.ptr.win_ptr, 17, 1L << 17, close_com, &inf);
-	mlx_loop_hook(inf.ptr.mlx_ptr, walkying, &inf);
-	img_to_window(&inf);
-	mlx_loop(inf.ptr.mlx_ptr);
+	mlx_loop_hook(inf.ptr.mlx, walkying, &inf);
+	mlx_loop(inf.ptr.mlx);
 }
 
 void	img_to_window(t_info *inf)
@@ -90,9 +91,7 @@ void	img_to_window(t_info *inf)
 		inf->j = 0;
 		while (inf->j < inf->map.width)
 		{
-			inf->ptr.img_ptr = mlx_xpm_file_to_image(inf->ptr.mlx_ptr, "images/0_ch]ao.xpm", &inf->pixel, &inf->pixel);
-			mlx_put_image_to_window(inf->ptr.mlx_ptr, inf->ptr.win_ptr, inf->ptr.img_ptr, inf->j * 64, inf->i * 64);
-			free(inf->ptr.img_ptr);
+			mlx_put_image_to_window(inf->ptr.mlx, inf->ptr.win_ptr, inf->ptr.i_floor, inf->j * 64, inf->i * 64);
 			inf->j++;
 		}
 		inf->i++;

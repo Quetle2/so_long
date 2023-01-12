@@ -6,7 +6,7 @@
 /*   By: miandrad <miandrad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 14:45:22 by miandrad          #+#    #+#             */
-/*   Updated: 2023/01/12 13:16:45 by miandrad         ###   ########.fr       */
+/*   Updated: 2023/01/12 15:04:07 by miandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,8 +50,7 @@ int	walkying(t_info *inf)
 		inf->plr.p_y++;
 	if (inf->plr.d == 1)
 		inf->plr.p_x++;
-	inf->ptr.img_ptr = mlx_xpm_file_to_image(inf->ptr.mlx_ptr, "images/bitfuul-image(1).xpm", &inf->pixel, &inf->pixel);
-	mlx_put_image_to_window(inf->ptr.mlx_ptr, inf->ptr.win_ptr, inf->ptr.img_ptr, inf->plr.p_x, inf->plr.p_y);
-	free(inf->ptr.img_ptr);
+	img_to_window(inf);
+	mlx_put_image_to_window(inf->ptr.mlx, inf->ptr.win_ptr, inf->ptr.i_plr, inf->plr.p_x, inf->plr.p_y);
 	return (0);
 }
