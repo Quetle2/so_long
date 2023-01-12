@@ -6,7 +6,7 @@
 /*   By: miandrad <miandrad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 12:55:27 by miandrad          #+#    #+#             */
-/*   Updated: 2023/01/12 15:04:50 by miandrad         ###   ########.fr       */
+/*   Updated: 2023/01/12 18:16:48 by miandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ typedef struct s_info
 		void	*i_plr;
 		void	*i_wall;
 		void	*i_exit;
+		void	*i_col;
 	}ptr;
 	struct s_plr
 	{
@@ -69,5 +70,6 @@ int		check_path(int i, int j, t_info *inf);
 // img display
 void	sprite_atribution(t_info *inf);
 void	img_to_window(t_info *inf);
+void	ifs(t_info *inf);
 
 #endif
