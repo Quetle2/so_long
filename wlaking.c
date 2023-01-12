@@ -32,7 +32,7 @@ int	keyup(int keycode, t_info *inf)
 	if (keycode == 'a')
 		inf->plr.a = 0;
 	if (keycode == 'w')
-		inf->plr.s = 0;
+		inf->plr.w = 0;
 	if (keycode == 's')
 		inf->plr.s = 0;
 	if (keycode == 'd')
