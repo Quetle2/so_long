@@ -6,7 +6,7 @@
 #    By: miandrad <miandrad@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/07 13:59:27 by miandrad          #+#    #+#              #
-#    Updated: 2023/01/11 19:07:30 by miandrad         ###   ########.fr        #
+#    Updated: 2023/01/12 13:12:37 by miandrad         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,13 +31,13 @@ GNL_OBJ = $(GNL_SRC:.c=.o)
 MAP_OBJ = $(MAP_SRC:.c=.o)
 
 all:
-	cc $(CFLAGS) $(MAIN_SRC) $(addprefix map_checker/,$(MAP_SRC)) $(addprefix get_next_line_100/,$(GNL_SRC)) ft_printf_100/libftprintf.a minilibx-linux/libmlx_Linux.a -lXext -lX11
+	$(CC) $(CFLAGS) $(MAIN_SRC) $(addprefix map_checker/,$(MAP_SRC)) $(addprefix get_next_line_100/,$(GNL_SRC)) ft_printf_100/libftprintf.a minilibx-linux/libmlx_Linux.a -lXext -lX11
 
 run:	all
 	./a.out map.ber
 
 valgrind:	all
-	$(CC) -g $(addprefix map_checker/,$(MAP_SRC)) $(addprefix get_next_line_100/,$(GNL_SRC)) && ./a.out map.ber
+	$(CC) -g $(CFLAGS) $(MAIN_SRC) $(addprefix map_checker/,$(MAP_SRC)) $(addprefix get_next_line_100/,$(GNL_SRC)) ft_printf_100/libftprintf.a minilibx-linux/libmlx_Linux.a -lXext -lX11
 	valgrind --leak-check=yes --leak-check=full ./a.out map.ber
 path:
 	$(CC) -g $(addprefix map_checker/,$(MAP_SRC)) $(addprefix get_next_line_100/,$(GNL_SRC)) && ./a.out map.ber
