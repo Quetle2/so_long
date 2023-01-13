@@ -6,7 +6,7 @@
 /*   By: miandrad <miandrad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 14:45:22 by miandrad          #+#    #+#             */
-/*   Updated: 2023/01/12 18:28:41 by miandrad         ###   ########.fr       */
+/*   Updated: 2023/01/13 12:42:01 by miandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,13 +44,14 @@ int	walkying(t_info *inf)
 {
 	img_to_window(inf);
 	if (inf->plr.a == 1)
-		inf->plr.p_x--;
+		inf->plr.p_x == inf->plr.p_x - (1 * 0.2);
 	if (inf->plr.w == 1)
-		inf->plr.p_y--;
+		inf->plr.p_x == inf->plr.p_y - (1 * 0.2);
 	if (inf->plr.s == 1)
-		inf->plr.p_y++;
+		inf->plr.p_x == inf->plr.p_y + (1 * 0.2);
 	if (inf->plr.d == 1)
-		inf->plr.p_x++;
-	mlx_put_image_to_window(inf->ptr.mlx, inf->ptr.win_ptr, inf->ptr.i_plr, inf->plr.p_x, inf->plr.p_y);
+		inf->plr.p_x == inf->plr.p_x + (1 * 0.2);
+	mlx_put_image_to_window(inf->ptr.mlx, inf->ptr.win_ptr,
+		inf->ptr.i_plr, inf->plr.p_x, inf->plr.p_y);
 	return (0);
 }

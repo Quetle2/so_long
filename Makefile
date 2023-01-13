@@ -6,7 +6,7 @@
 #    By: miandrad <miandrad@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/07 13:59:27 by miandrad          #+#    #+#              #
-#    Updated: 2023/01/12 15:08:36 by miandrad         ###   ########.fr        #
+#    Updated: 2023/01/13 12:28:06 by miandrad         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,7 +41,7 @@ valgrind:	all
 	valgrind --leak-check=yes --leak-check=full --show-leak-kinds=all ./a.out map.ber
 path:
 	$(CC) -g $(addprefix map_checker/,$(MAP_SRC)) $(addprefix get_next_line_100/,$(GNL_SRC)) && ./a.out map.ber
-	valgrind --leak-check=yes --log-file=valgrind.rpt a.out
+	valgrind --leak-check=yes ./a.out
 
 NAME:
 	cc $(MAIN_SRC) $(addprefix map_checker/,$(MAP_SRC)) $(addprefix get_next_line_100/,$(GNL_SRC)) minilibx-linux/libmlx_Linux.a -lXext -lX11
