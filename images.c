@@ -94,10 +94,7 @@ void	img_render(t_info *inf)
 		inf->ptr.i_floor, ((inf->plr.p_x / 64) + 1) * 64, (inf->plr.p_y / 64) * 64);
 	mlx_put_image_to_window(inf->ptr.mlx, inf->ptr.win_ptr,
 		inf->ptr.i_floor, (inf->plr.p_x / 64) * 64, ((inf->plr.p_y / 64) + 1) * 64);
-	// mlx_put_image_to_window(inf->ptr.mlx, inf->ptr.win_ptr,
-	// 	inf->ptr.i_floor, (inf->plr.p_x / 64) * 64, ((inf->plr.p_y / 64) - 1) * 64);
 	mlx_put_image_to_window(inf->ptr.mlx, inf->ptr.win_ptr,
 		inf->ptr.i_floor, ((inf->plr.p_x / 64) + 1) * 64, ((inf->plr.p_y / 64) + 1) * 64);
-//	mlx_put_image_to_window(inf->ptr.mlx, inf->ptr.win_ptr,
-//		inf->ptr.i_floor, ((inf->plr.p_x / 64) + 1) * 64, ((inf->plr.p_y / 64) - 1) * 64);
+
 }
