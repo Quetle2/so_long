@@ -6,7 +6,7 @@
 /*   By: miandrad <miandrad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 16:45:28 by miandrad          #+#    #+#             */
-/*   Updated: 2023/01/11 19:07:43 by miandrad         ###   ########.fr       */
+/*   Updated: 2023/01/13 14:28:05 by miandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,17 @@
 
 char	**map_cpy(int fd, t_info *inf, char *path)
 {
-	while (get_next_line(fd))
+	char	*temp;
+
+	temp = get_next_line(fd);
+	while (temp)
+	{
+		free(temp);
+		temp = get_next_line(fd);
 		inf->map.width++;
+	}
 	close(fd);
-	inf->matrix = malloc(sizeof(char *) * inf->map.width);
+	inf->matrix = malloc(sizeof(char *) * (inf->map.width + 1));
 	fd = open(path, O_RDONLY);
 	while (inf->map.width > 0)
 	{

@@ -6,7 +6,7 @@
 /*   By: miandrad <miandrad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 16:24:26 by miandrad          #+#    #+#             */
-/*   Updated: 2023/01/12 18:28:33 by miandrad         ###   ########.fr       */
+/*   Updated: 2023/01/13 14:46:01 by miandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,26 @@
 
 int	close_com(t_info *inf)
 {
+	int	i;
+
+	i = 0;
+	mlx_destroy_image(inf->ptr.mlx, inf->ptr.i_col);
+	mlx_destroy_image(inf->ptr.mlx, inf->ptr.i_floor);
+	mlx_destroy_image(inf->ptr.mlx, inf->ptr.i_exit);
+	mlx_destroy_image(inf->ptr.mlx, inf->ptr.i_wall);
+	mlx_destroy_image(inf->ptr.mlx, inf->ptr.i_plr);
+	mlx_clear_window(inf->ptr.mlx, inf->ptr.win_ptr);
 	mlx_destroy_window(inf->ptr.mlx, inf->ptr.win_ptr);
 	mlx_destroy_display(inf->ptr.mlx);
 	free(inf->ptr.mlx);
+	while (inf->matrix[i])
+	{
+		free(inf->matrix[i]);
+		ft_printf("Ok\n");
+		i++;
+	}
+	get_next_line(-1);
+	free(inf->matrix[i]);
 	free(inf->matrix);
 	exit (0);
 }

@@ -44,13 +44,13 @@ int	walkying(t_info *inf)
 {
 	img_to_window(inf);
 	if (inf->plr.a == 1)
-		inf->plr.p_x == inf->plr.p_x - (1 * 0.2);
+		inf->plr.p_x--;
 	if (inf->plr.w == 1)
-		inf->plr.p_x == inf->plr.p_y - (1 * 0.2);
+		inf->plr.p_y--;
 	if (inf->plr.s == 1)
-		inf->plr.p_x == inf->plr.p_y + (1 * 0.2);
+		inf->plr.p_y++;
 	if (inf->plr.d == 1)
-		inf->plr.p_x == inf->plr.p_x + (1 * 0.2);
+		inf->plr.p_x++;
 	mlx_put_image_to_window(inf->ptr.mlx, inf->ptr.win_ptr,
 		inf->ptr.i_plr, inf->plr.p_x, inf->plr.p_y);
 	return (0);

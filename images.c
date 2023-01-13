@@ -6,7 +6,7 @@
 /*   By: miandrad <miandrad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 14:34:07 by miandrad          #+#    #+#             */
-/*   Updated: 2023/01/12 18:25:35 by miandrad         ###   ########.fr       */
+/*   Updated: 2023/01/13 14:48:43 by miandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,16 @@
 
 void	sprite_atribution(t_info *inf)
 {
-	inf->ptr.i_floor = mlx_new_image(inf->ptr.mlx, 64,
-		64);
-	inf->ptr.i_plr = mlx_new_image(inf->ptr.mlx, 64,
-		64);
-	inf->ptr.i_exit = mlx_new_image(inf->ptr.mlx, 64,
-		64);
-	inf->ptr.i_wall = mlx_new_image(inf->ptr.mlx, 64,
-		64);
-	inf->ptr.i_col = mlx_new_image(inf->ptr.mlx, 64,
-		64);
-	inf->ptr.i_floor = mlx_xpm_file_to_image(inf->ptr.mlx, "images/0.xpm", &inf->pixel, &inf->pixel);
-	inf->ptr.i_plr = mlx_xpm_file_to_image(inf->ptr.mlx, "images/P.xpm", &inf->pixel, &inf->pixel);
-	inf->ptr.i_exit = mlx_xpm_file_to_image(inf->ptr.mlx, "images/E.xpm", &inf->pixel, &inf->pixel);
-	inf->ptr.i_wall = mlx_xpm_file_to_image(inf->ptr.mlx, "images/1.xpm", &inf->pixel, &inf->pixel);
-	inf->ptr.i_col = mlx_xpm_file_to_image(inf->ptr.mlx, "images/C.xpm", &inf->pixel, &inf->pixel);
-
+	inf->ptr.i_floor = mlx_xpm_file_to_image(inf->ptr.mlx,
+			"images/0.xpm", &inf->pixel, &inf->pixel);
+	inf->ptr.i_plr = mlx_xpm_file_to_image(inf->ptr.mlx,
+			"images/P.xpm", &inf->pixel, &inf->pixel);
+	inf->ptr.i_exit = mlx_xpm_file_to_image(inf->ptr.mlx,
+			"images/E.xpm", &inf->pixel, &inf->pixel);
+	inf->ptr.i_wall = mlx_xpm_file_to_image(inf->ptr.mlx,
+			"images/1.xpm", &inf->pixel, &inf->pixel);
+	inf->ptr.i_col = mlx_xpm_file_to_image(inf->ptr.mlx,
+			"images/C.xpm", &inf->pixel, &inf->pixel);
 }
 
 void	ifs(t_info *inf)

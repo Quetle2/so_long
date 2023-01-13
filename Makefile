@@ -6,7 +6,7 @@
 #    By: miandrad <miandrad@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/07 13:59:27 by miandrad          #+#    #+#              #
-#    Updated: 2023/01/13 12:28:06 by miandrad         ###   ########.fr        #
+#    Updated: 2023/01/13 14:51:20 by miandrad         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,20 +30,19 @@ GNL_OBJ = $(GNL_SRC:.c=.o)
 
 MAP_OBJ = $(MAP_SRC:.c=.o)
 
-all:
-	$(CC) $(CFLAGS) $(MAIN_SRC) $(addprefix map_checker/,$(MAP_SRC)) $(addprefix get_next_line_100/,$(GNL_SRC)) ft_printf_100/libftprintf.a minilibx-linux/libmlx_Linux.a -lXext -lX11
+all: $(NAME)
 
 run:	all
 	./a.out map.ber
 
 valgrind:	all
-	$(CC) -g $(CFLAGS) $(MAIN_SRC) $(addprefix map_checker/,$(MAP_SRC)) $(addprefix get_next_line_100/,$(GNL_SRC)) ft_printf_100/libftprintf.a minilibx-linux/libmlx_Linux.a -lXext -lX11
-	valgrind --leak-check=yes --leak-check=full --show-leak-kinds=all ./a.out map.ber
-path:
-	$(CC) -g $(addprefix map_checker/,$(MAP_SRC)) $(addprefix get_next_line_100/,$(GNL_SRC)) && ./a.out map.ber
-	valgrind --leak-check=yes ./a.out
+	valgrind --leak-check=yes --leak-check=full --show-leak-kinds=all --track-origins=yes ./a.out map.ber
 
-NAME:
-	cc $(MAIN_SRC) $(addprefix map_checker/,$(MAP_SRC)) $(addprefix get_next_line_100/,$(GNL_SRC)) minilibx-linux/libmlx_Linux.a -lXext -lX11
+clean:
+	@$(RM) a.out
+	
+
+$(NAME):
+	$(CC) -g $(CFLAGS) $(MAIN_SRC) $(addprefix map_checker/,$(MAP_SRC)) $(addprefix get_next_line_100/,$(GNL_SRC)) ft_printf_100/libftprintf.a minilibx-linux/libmlx_Linux.a -lXext -lX11
 
 
