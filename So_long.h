@@ -6,7 +6,7 @@
 /*   By: miandrad <miandrad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 12:55:27 by miandrad          #+#    #+#             */
-/*   Updated: 2023/01/12 18:16:48 by miandrad         ###   ########.fr       */
+/*   Updated: 2023/01/13 17:38:50 by miandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define SO_LONG_H
 
 # include <fcntl.h>
-# include "ft_printf_100/ft_printf.h"
 # include "get_next_line_100/get_next_line.h"
 # include "/nfs/homes/miandrad/Desktop/so_long/minilibx-linux/mlx.h"
 
@@ -38,6 +37,7 @@ typedef struct s_info
 		void	*i_wall;
 		void	*i_exit;
 		void	*i_col;
+		void	*i_lake;
 	}ptr;
 	struct s_plr
 	{
@@ -70,6 +70,7 @@ int		check_path(int i, int j, t_info *inf);
 // img display
 void	sprite_atribution(t_info *inf);
 void	img_to_window(t_info *inf);
+void	img_render(t_info *inf);
 void	ifs(t_info *inf);
 
 #endif

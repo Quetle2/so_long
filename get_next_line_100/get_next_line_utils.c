@@ -6,7 +6,7 @@
 /*   By: miandrad <miandrad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 14:54:43 by miandrad          #+#    #+#             */
-/*   Updated: 2023/01/13 13:49:55 by miandrad         ###   ########.fr       */
+/*   Updated: 2023/01/13 16:28:28 by miandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,32 +64,6 @@ char	*ft_strchr(const char *str, int c)
 		str++;
 	}
 	return (0);
-}
-
-char	*ft_substr(char *str, unsigned int start, size_t len)
-{
-	size_t	i;
-	char	*p;
-
-	i = 0;
-	if (!str)
-		return (0);
-	if (len == 0 || start >= ft_strlen_gnl(str, 0))
-	{
-		p = malloc(1);
-		p[i] = '\0';
-		return (p);
-	}
-	if (len <= ft_strlen_gnl(str, 0) - start)
-		p = ft_calloc(len + 1, sizeof(char));
-	else
-		p = ft_calloc(ft_strlen_gnl(str, 0) - start + 1, sizeof(char));
-	if (!p)
-		return (0);
-	while (str[start] && i < len && start < ft_strlen_gnl(str, 0))
-		p[i++] = str[start++];
-	p[i] = '\0';
-	return (p);
 }
 
 void	*ft_calloc(size_t noob, size_t size)

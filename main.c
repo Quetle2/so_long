@@ -6,7 +6,7 @@
 /*   By: miandrad <miandrad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 16:24:26 by miandrad          #+#    #+#             */
-/*   Updated: 2023/01/13 14:46:01 by miandrad         ###   ########.fr       */
+/*   Updated: 2023/01/13 17:34:32 by miandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ int	close_com(t_info *inf)
 	while (inf->matrix[i])
 	{
 		free(inf->matrix[i]);
-		ft_printf("Ok\n");
 		i++;
 	}
 	get_next_line(-1);
@@ -88,6 +87,7 @@ int	main(int argc, char **argv)
 		return (0);
 	}
 	sprite_atribution(&inf);
+	img_to_window(&inf);
 	mlx_hook(inf.ptr.win_ptr, 2, 1L << 0, keydown, &inf);
 	mlx_hook(inf.ptr.win_ptr, 3, 1L << 1, keyup, &inf);
 	mlx_hook(inf.ptr.win_ptr, 17, 1L << 17, close_com, &inf);

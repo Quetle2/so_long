@@ -6,7 +6,7 @@
 /*   By: miandrad <miandrad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 17:11:16 by miandrad          #+#    #+#             */
-/*   Updated: 2023/01/12 18:22:38 by miandrad         ###   ########.fr       */
+/*   Updated: 2023/01/13 18:25:57 by miandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,10 +87,10 @@ int	check_cpe(t_info *inf)
 int	check_path(int i, int j, t_info *inf)
 {
 	// if (j == inf->map.end_x && i == inf->map.end_y)
-	// {
-	// 	return (1);
-	// }
-	if (inf->matrix[i][j] == '0' ||  inf->matrix[i][j] == 'P' || inf->matrix[i][j] == 'C' || inf->matrix[i][j] == 'E')
+	// 		return (1);
+	ft_printf("x: %d y:%d\n", j, i);
+	if (inf->matrix[i][j] == '0' || inf->matrix[i][j] == 'P'
+	|| inf->matrix[i][j] == 'C' || inf->matrix[i][j] == 'E')
 	{
 		if (inf->matrix[i][j] == '0')
 			inf->matrix[i][j] = '-';
@@ -98,13 +98,15 @@ int	check_path(int i, int j, t_info *inf)
 			inf->matrix[i][j] = 'c';
 		if (inf->matrix[i][j] == 'E')
 			inf->matrix[i][j] = 'e';
-		if (check_path(i, j - 1, inf))
-			return (1);
-		if (check_path(i + 1, j, inf))
+		if (inf->matrix[i][j] == 'P')
+			inf->matrix[i][j] = 'p';
+		if (check_path(i - 1, j, inf))
 			return (1);
 		if (check_path(i, j + 1, inf))
 			return (1);
-		if (check_path(i - 1, j, inf))
+		if (check_path(i + 1, j, inf))
+			return (1);
+		if (check_path(i, j - 1, inf))
 			return (1);
 	}
 	return (0);

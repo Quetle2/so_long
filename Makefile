@@ -6,15 +6,15 @@
 #    By: miandrad <miandrad@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/07 13:59:27 by miandrad          #+#    #+#              #
-#    Updated: 2023/01/13 14:51:20 by miandrad         ###   ########.fr        #
+#    Updated: 2023/01/13 17:23:16 by miandrad         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = so_long.a
+NAME = so_long
 
 CC = cc
 
-RM = rm -f
+RM = rm -rf
 
 CFLAGS = -Wall -Wextra -Werror
 
@@ -24,25 +24,25 @@ GNL_SRC = get_next_line_utils.c get_next_line.c
 
 MAP_SRC = map_checker.c map_cpy.c
 
-MAIN_OBJ = $(MAIN_SRC:.c=.o)
-
-GNL_OBJ = $(GNL_SRC:.c=.o)
-
-MAP_OBJ = $(MAP_SRC:.c=.o)
-
 all: $(NAME)
 
 run:	all
-	./a.out map.ber
+	@./so_long map.ber
 
 valgrind:	all
-	valgrind --leak-check=yes --leak-check=full --show-leak-kinds=all --track-origins=yes ./a.out map.ber
+	@valgrind --leak-check=yes --leak-check=full --show-leak-kinds=all --track-origins=yes ./so_long map.ber
 
 clean:
-	@$(RM) a.out
-	
+	@make clean -s -C ft_printf_100
+	@make clean -s -C minilibx-linux
 
-$(NAME):
-	$(CC) -g $(CFLAGS) $(MAIN_SRC) $(addprefix map_checker/,$(MAP_SRC)) $(addprefix get_next_line_100/,$(GNL_SRC)) ft_printf_100/libftprintf.a minilibx-linux/libmlx_Linux.a -lXext -lX11
+fclean:
+	@make fclean -s -C ft_printf_100
+	@$(RM) so_long
 
+re: fclean all
 
+$(NAME): 
+	@make -s -C ft_printf_100
+	@make -s -C minilibx-linux
+	@$(CC) -g $(CFLAGS) $(MAIN_SRC) $(addprefix map_checker/,$(MAP_SRC)) $(addprefix get_next_line_100/,$(GNL_SRC)) ft_printf_100/libftprintf.a minilibx-linux/libmlx_Linux.a -lXext -lX11 -o $(NAME)

@@ -6,7 +6,7 @@
 /*   By: miandrad <miandrad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 14:45:22 by miandrad          #+#    #+#             */
-/*   Updated: 2023/01/13 12:42:01 by miandrad         ###   ########.fr       */
+/*   Updated: 2023/01/13 19:00:42 by miandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,8 @@ int	keyup(int keycode, t_info *inf)
 
 int	walkying(t_info *inf)
 {
-	img_to_window(inf);
+	img_render(inf);
+	img_render(inf);
 	if (inf->plr.a == 1)
 		inf->plr.p_x--;
 	if (inf->plr.w == 1)
