@@ -10,6 +10,17 @@
 #                                                                              #
 # **************************************************************************** #
 
+# remove in "img_to_window" "mlx_put_image_to_window"
+
+# implemente code in photos (Serves to render all the surrounding blocks correctly)
+
+# animation idea:
+#
+# using lists and the map checker. Look for the block with animation, 
+# change the sprite with every call of function render iterating the list.
+# PS: need a way to return to the top of the list after wich cycle of sprites.
+
+
 NAME = so_long
 
 CC = cc
