@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   So_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: miandrad <miandrad@student.42.fr>          +#+  +:+       +#+        */
+/*   By: apereira <apereira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 12:55:27 by miandrad          #+#    #+#             */
-/*   Updated: 2023/01/13 17:38:50 by miandrad         ###   ########.fr       */
+/*   Updated: 2023/01/15 20:22:14 by apereira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,6 @@ int		check_path(int i, int j, t_info *inf);
 void	sprite_atribution(t_info *inf);
 void	img_to_window(t_info *inf);
 void	img_render(t_info *inf);
-void	ifs(t_info *inf);
+void	ifs(t_info *inf, int i, int j);
 
 #endif
