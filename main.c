@@ -6,7 +6,7 @@
 /*   By: ubuntu <ubuntu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 16:24:26 by miandrad          #+#    #+#             */
-/*   Updated: 2023/01/15 23:06:05 by ubuntu           ###   ########.fr       */
+/*   Updated: 2023/01/16 09:46:53 by ubuntu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ int	close_com(t_info *inf)
 
 	i = 0;
 	mlx_destroy_image(inf->ptr.mlx, inf->ptr.i_col);
+	mlx_destroy_image(inf->ptr.mlx, inf->ptr.i_lake);
 	mlx_destroy_image(inf->ptr.mlx, inf->ptr.i_floor);
 	mlx_destroy_image(inf->ptr.mlx, inf->ptr.i_exit);
 	mlx_destroy_image(inf->ptr.mlx, inf->ptr.i_wall);

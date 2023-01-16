@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   map_checker.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: apereira <apereira@student.42.fr>          +#+  +:+       +#+        */
+/*   By: miandrad <miandrad@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 17:11:16 by miandrad          #+#    #+#             */
-/*   Updated: 2023/01/15 20:33:32 by apereira         ###   ########.fr       */
+/*   Updated: 2023/01/16 11:25:28 by miandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ int	check_cpe(t_info *inf)
 			if (inf->matrix[inf->i][j] == 'E')
 			{
 				e++;
-				inf->map.end_x = j - 1;
+				inf->map.end_x = j;
 				inf->map.end_y = inf->i;
 			}
 			j++;

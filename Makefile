@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ubuntu <ubuntu@student.42.fr>              +#+  +:+       +#+         #
+#    By: miandrad <miandrad@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/07 13:59:27 by miandrad          #+#    #+#              #
-#    Updated: 2023/01/15 22:44:08 by ubuntu           ###   ########.fr        #
+#    Updated: 2023/01/16 11:16:48 by miandrad         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,6 +24,8 @@ CC = cc
 RM = rm -rf
 
 CFLAGS = -Wall -Wextra -Werror
+
+ANM_SRC = collectibles.c
 
 MAIN_SRC = main.c wlaking.c images.c
 
@@ -52,4 +54,4 @@ re: fclean all
 $(NAME): 
 	@make -s -C ft_printf_100
 	@make -s -C minilibx-linux
-	@$(CC) -g $(CFLAGS) $(MAIN_SRC) $(addprefix map_checker/,$(MAP_SRC)) $(addprefix get_next_line_100/,$(GNL_SRC)) ft_printf_100/libftprintf.a minilibx-linux/libmlx_Linux.a -lXext -lX11 -o $(NAME)
+	@$(CC) -g $(CFLAGS) $(MAIN_SRC) $(addprefix animations/,$(ANM_SRC)) $(addprefix map_checker/,$(MAP_SRC)) $(addprefix get_next_line_100/,$(GNL_SRC)) ft_printf_100/libftprintf.a minilibx-linux/libmlx_Linux.a -lXext -lX11 -o $(NAME)

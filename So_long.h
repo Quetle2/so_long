@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   So_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: apereira <apereira@student.42.fr>          +#+  +:+       +#+        */
+/*   By: miandrad <miandrad@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 12:55:27 by miandrad          #+#    #+#             */
-/*   Updated: 2023/01/15 20:22:14 by apereira         ###   ########.fr       */
+/*   Updated: 2023/01/16 11:54:55 by miandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ typedef struct s_info
 	{
 		void	*win_ptr;
 		void	*mlx;
+		void	*i_open;
+		void	*i_dead;
 		void	*i_floor;
 		void	*i_plr;
 		void	*i_wall;
@@ -72,5 +74,8 @@ void	sprite_atribution(t_info *inf);
 void	img_to_window(t_info *inf);
 void	img_render(t_info *inf);
 void	ifs(t_info *inf, int i, int j);
+
+// interactions
+void	colect_food(t_info	*inf);
 
 #endif
