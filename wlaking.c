@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   wlaking.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ubuntu <ubuntu@student.42.fr>              +#+  +:+       +#+        */
+/*   By: miandrad <miandrad@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 14:45:22 by miandrad          #+#    #+#             */
-/*   Updated: 2023/01/16 10:54:02 by ubuntu           ###   ########.fr       */
+/*   Updated: 2023/01/16 13:49:18 by miandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,5 +62,6 @@ int	walkying(t_info *inf)
 	colect_food(inf);
 	mlx_put_image_to_window(inf->ptr.mlx, inf->ptr.win_ptr,
 		inf->ptr.i_plr, inf->plr.p_x, inf->plr.p_y);
+	animation(inf);
 	return (0);
 }

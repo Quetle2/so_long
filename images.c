@@ -6,7 +6,7 @@
 /*   By: miandrad <miandrad@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 14:34:07 by miandrad          #+#    #+#             */
-/*   Updated: 2023/01/16 11:57:19 by miandrad         ###   ########.fr       */
+/*   Updated: 2023/01/16 13:44:21 by miandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,13 @@ void	sprite_atribution(t_info *inf)
 	inf->ptr.i_floor = mlx_xpm_file_to_image(inf->ptr.mlx,
 			"images/0.xpm", &inf->pixel, &inf->pixel);
 	inf->ptr.i_plr = mlx_xpm_file_to_image(inf->ptr.mlx,
-			"images/p.xpm", &inf->pixel, &inf->pixel);
+			"images/P.xpm", &inf->pixel, &inf->pixel);
+	inf->ptr.i_pl = mlx_xpm_file_to_image(inf->ptr.mlx,
+			"images/Pl.xpm", &inf->pixel, &inf->pixel);
+	inf->ptr.i_pd = mlx_xpm_file_to_image(inf->ptr.mlx,
+			"images/Pd.xpm", &inf->pixel, &inf->pixel);
+	inf->ptr.i_pu = mlx_xpm_file_to_image(inf->ptr.mlx,
+			"images/Pu.xpm", &inf->pixel, &inf->pixel);
 	inf->ptr.i_exit = mlx_xpm_file_to_image(inf->ptr.mlx,
 			"images/E.xpm", &inf->pixel, &inf->pixel);
 	inf->ptr.i_wall = mlx_xpm_file_to_image(inf->ptr.mlx,
@@ -51,7 +57,7 @@ void	ifs(t_info *inf, int i, int j)
 			j * 64, i * 64);
 	else if (inf->matrix[i][j] == 'C')
 		mlx_put_image_to_window(inf->ptr.mlx, inf->ptr.win_ptr, inf->ptr.i_dead,
-			j * 64 + 15, i * 64 + 15);
+			j * 64, i * 64);
 	else
 		mlx_put_image_to_window(inf->ptr.mlx, inf->ptr.win_ptr,
 			inf->ptr.i_floor, j * 64, i * 64);

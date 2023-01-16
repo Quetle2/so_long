@@ -6,7 +6,7 @@
 #    By: miandrad <miandrad@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/07 13:59:27 by miandrad          #+#    #+#              #
-#    Updated: 2023/01/16 11:16:48 by miandrad         ###   ########.fr        #
+#    Updated: 2023/01/16 12:50:23 by miandrad         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ RM = rm -rf
 
 CFLAGS = -Wall -Wextra -Werror
 
-ANM_SRC = collectibles.c
+ANM_SRC = collectibles.c animations.c
 
 MAIN_SRC = main.c wlaking.c images.c
 

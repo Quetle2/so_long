@@ -6,7 +6,7 @@
 /*   By: miandrad <miandrad@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 12:55:27 by miandrad          #+#    #+#             */
-/*   Updated: 2023/01/16 11:54:55 by miandrad         ###   ########.fr       */
+/*   Updated: 2023/01/16 13:43:37 by miandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,9 @@ typedef struct s_info
 		void	*i_dead;
 		void	*i_floor;
 		void	*i_plr;
+		void	*i_pl;
+		void	*i_pd;
+		void	*i_pu;
 		void	*i_wall;
 		void	*i_exit;
 		void	*i_col;
@@ -75,7 +78,8 @@ void	img_to_window(t_info *inf);
 void	img_render(t_info *inf);
 void	ifs(t_info *inf, int i, int j);
 
-// interactions
+// interactions and animations
 void	colect_food(t_info	*inf);
+void	animation(t_info *inf);
 
 #endif
