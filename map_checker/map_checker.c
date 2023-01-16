@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   map_checker.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: miandrad <miandrad@student.42.fr>          +#+  +:+       +#+        */
+/*   By: apereira <apereira@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 17:11:16 by miandrad          #+#    #+#             */
-/*   Updated: 2023/01/13 18:25:57 by miandrad         ###   ########.fr       */
+/*   Updated: 2023/01/15 20:33:32 by apereira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,9 +86,6 @@ int	check_cpe(t_info *inf)
 
 int	check_path(int i, int j, t_info *inf)
 {
-	// if (j == inf->map.end_x && i == inf->map.end_y)
-	// 		return (1);
-	ft_printf("x: %d y:%d\n", j, i);
 	if (inf->matrix[i][j] == '0' || inf->matrix[i][j] == 'P'
 	|| inf->matrix[i][j] == 'C' || inf->matrix[i][j] == 'E')
 	{
