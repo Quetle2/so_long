@@ -43,14 +43,13 @@ int	keyup(int keycode, t_info *inf)
 int	walkying(t_info *inf)
 {
 	img_render(inf);
-	img_render(inf);
-	if (inf->plr.a == 1)
+	if (inf->plr.a == 1 && !(inf->matrix[(inf->plr.p_y / 64)][((inf->plr.p_x - 1) / 64)] == '1'))
 		inf->plr.p_x--;
-	if (inf->plr.w == 1)
+	if (inf->plr.w == 1 && !(inf->matrix[((inf->plr.p_y - 1) / 64)][(inf->plr.p_x / 64)] == '1'))
 		inf->plr.p_y--;
-	if (inf->plr.s == 1)
+	if (inf->plr.s == 1 && !(inf->matrix[((inf->plr.p_y + 64) / 64)][(inf->plr.p_x / 64)] == '1'))
 		inf->plr.p_y++;
-	if (inf->plr.d == 1)
+	if (inf->plr.d == 1 && !(inf->matrix[(inf->plr.p_y / 64)][((inf->plr.p_x + 64) / 64)] == '1'))
 		inf->plr.p_x++;
 	mlx_put_image_to_window(inf->ptr.mlx, inf->ptr.win_ptr,
 		inf->ptr.i_plr, inf->plr.p_x, inf->plr.p_y);
