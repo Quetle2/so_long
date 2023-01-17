@@ -6,7 +6,7 @@
 /*   By: miandrad <miandrad@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 14:45:22 by miandrad          #+#    #+#             */
-/*   Updated: 2023/01/17 16:17:49 by miandrad         ###   ########.fr       */
+/*   Updated: 2023/01/17 17:59:10 by miandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,8 @@ int	keyup(int keycode, t_info *inf)
 
 int	walkying(t_info *inf)
 {
+	if (inf->end == 0)
+	{
 	img_render(inf);
 	if (inf->plr.a == 1
 	&& inf->matrix[(inf->plr.p_y / 64)][((inf->plr.p_x - 1) / 64)] != '1'
@@ -63,6 +65,9 @@ int	walkying(t_info *inf)
 	mlx_put_image_to_window(inf->ptr.mlx, inf->ptr.win_ptr,
 		inf->ptr.i_plr, inf->plr.p_x, inf->plr.p_y);
 	animation(inf);
-	// end_check(inf);
+	end_check(inf);
+	}
+	else if (inf->end == 1)
+		end_screen(inf);
 	return (0);
 }

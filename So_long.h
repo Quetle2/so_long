@@ -6,7 +6,7 @@
 /*   By: miandrad <miandrad@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 12:55:27 by miandrad          #+#    #+#             */
-/*   Updated: 2023/01/17 17:43:57 by miandrad         ###   ########.fr       */
+/*   Updated: 2023/01/17 18:25:14 by miandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,9 @@ typedef struct s_info
 	}plr;
 	int			i;
 	int			j;
+	int			end;
 	int			pixel;
+	int			win_final;
 }t_info;
 
 int		keydown(int keycode, t_info *plr_m);

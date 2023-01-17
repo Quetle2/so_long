@@ -6,7 +6,7 @@
 /*   By: miandrad <miandrad@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 14:34:07 by miandrad          #+#    #+#             */
-/*   Updated: 2023/01/17 17:37:49 by miandrad         ###   ########.fr       */
+/*   Updated: 2023/01/17 18:28:00 by miandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	sprite_atribution(t_info *inf)
 	inf->ptr.i_open = mlx_xpm_file_to_image(inf->ptr.mlx,
 		"images/e.xpm", &inf->pixel, &inf->pixel);
 	inf->ptr.i_win = mlx_xpm_file_to_image(inf->ptr.mlx,
-		"images/Win.xpm", &inf->pixel, &inf->pixel);
+		"images/Win.xpm", &inf->win_final, &inf->win_final);
 	inf->ptr.i_dead = mlx_xpm_file_to_image(inf->ptr.mlx,
 		"images/dead.xpm", &inf->pixel, &inf->pixel);
 	inf->ptr.i_lake = mlx_xpm_file_to_image(inf->ptr.mlx,
