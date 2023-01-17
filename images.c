@@ -6,7 +6,7 @@
 /*   By: miandrad <miandrad@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 14:34:07 by miandrad          #+#    #+#             */
-/*   Updated: 2023/01/16 13:44:21 by miandrad         ###   ########.fr       */
+/*   Updated: 2023/01/16 21:29:22 by miandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,14 @@ void	sprite_atribution(t_info *inf)
 			"images/Pd.xpm", &inf->pixel, &inf->pixel);
 	inf->ptr.i_pu = mlx_xpm_file_to_image(inf->ptr.mlx,
 			"images/Pu.xpm", &inf->pixel, &inf->pixel);
+	inf->ptr.i_pud = mlx_xpm_file_to_image(inf->ptr.mlx,
+			"images/Pud.xpm", &inf->pixel, &inf->pixel);
+	inf->ptr.i_pul = mlx_xpm_file_to_image(inf->ptr.mlx,
+			"images/Plu.xpm", &inf->pixel, &inf->pixel);
+	inf->ptr.i_psl = mlx_xpm_file_to_image(inf->ptr.mlx,
+			"images/Pls.xpm", &inf->pixel, &inf->pixel);
+	inf->ptr.i_psd = mlx_xpm_file_to_image(inf->ptr.mlx,
+			"images/Pds.xpm", &inf->pixel, &inf->pixel);
 	inf->ptr.i_exit = mlx_xpm_file_to_image(inf->ptr.mlx,
 			"images/E.xpm", &inf->pixel, &inf->pixel);
 	inf->ptr.i_wall = mlx_xpm_file_to_image(inf->ptr.mlx,

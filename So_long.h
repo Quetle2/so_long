@@ -6,7 +6,7 @@
 /*   By: miandrad <miandrad@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 12:55:27 by miandrad          #+#    #+#             */
-/*   Updated: 2023/01/16 13:43:37 by miandrad         ###   ########.fr       */
+/*   Updated: 2023/01/16 18:57:39 by miandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,10 @@ typedef struct s_info
 		void	*i_pl;
 		void	*i_pd;
 		void	*i_pu;
+		void	*i_pul;
+		void	*i_pud;
+		void	*i_psd;
+		void	*i_psl;
 		void	*i_wall;
 		void	*i_exit;
 		void	*i_col;
