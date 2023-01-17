@@ -6,7 +6,7 @@
 /*   By: miandrad <miandrad@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 14:45:22 by miandrad          #+#    #+#             */
-/*   Updated: 2023/01/16 13:49:18 by miandrad         ###   ########.fr       */
+/*   Updated: 2023/01/17 16:17:49 by miandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,5 +63,6 @@ int	walkying(t_info *inf)
 	mlx_put_image_to_window(inf->ptr.mlx, inf->ptr.win_ptr,
 		inf->ptr.i_plr, inf->plr.p_x, inf->plr.p_y);
 	animation(inf);
+	// end_check(inf);
 	return (0);
 }

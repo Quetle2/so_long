@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ubuntu <ubuntu@student.42.fr>              +#+  +:+       +#+        */
+/*   By: miandrad <miandrad@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 16:24:26 by miandrad          #+#    #+#             */
-/*   Updated: 2023/01/16 09:46:53 by ubuntu           ###   ########.fr       */
+/*   Updated: 2023/01/17 16:40:42 by miandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,15 @@ int	close_com(t_info *inf)
 	mlx_destroy_image(inf->ptr.mlx, inf->ptr.i_exit);
 	mlx_destroy_image(inf->ptr.mlx, inf->ptr.i_wall);
 	mlx_destroy_image(inf->ptr.mlx, inf->ptr.i_plr);
+	mlx_destroy_image(inf->ptr.mlx, inf->ptr.i_pl);
+	mlx_destroy_image(inf->ptr.mlx, inf->ptr.i_pd);
+	mlx_destroy_image(inf->ptr.mlx, inf->ptr.i_pu);
+	mlx_destroy_image(inf->ptr.mlx, inf->ptr.i_psd);
+	mlx_destroy_image(inf->ptr.mlx, inf->ptr.i_psl);
+	mlx_destroy_image(inf->ptr.mlx, inf->ptr.i_pud);
+	mlx_destroy_image(inf->ptr.mlx, inf->ptr.i_pul);
+	mlx_destroy_image(inf->ptr.mlx, inf->ptr.i_dead);
+	mlx_destroy_image(inf->ptr.mlx, inf->ptr.i_open);
 	mlx_clear_window(inf->ptr.mlx, inf->ptr.win_ptr);
 	mlx_destroy_window(inf->ptr.mlx, inf->ptr.win_ptr);
 	mlx_destroy_display(inf->ptr.mlx);
@@ -35,6 +44,7 @@ int	close_com(t_info *inf)
 	get_next_line(-1);
 	free(inf->matrix[i]);
 	free(inf->matrix);
+	write(1, "\nGAME OVER\n\n", 12);
 	exit (0);
 }
 
