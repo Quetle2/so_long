@@ -6,7 +6,7 @@
 /*   By: miandrad <miandrad@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 10:56:47 by ubuntu            #+#    #+#             */
-/*   Updated: 2023/01/17 18:55:22 by miandrad         ###   ########.fr       */
+/*   Updated: 2023/01/17 18:23:06 by miandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,50 @@ void	end_screen(t_info *inf)
 	mlx_put_image_to_window(inf->ptr.mlx, inf->ptr.win_ptr, inf->ptr.i_win,
 			0, 0);
 	mlx_hook(inf->ptr.win_ptr, 2, 1L << 0, keydown, &inf);
-	mlx_hook(inf->ptr.win_ptr, 17, 1L << 17, close_com, &inf);
+	mlx_hook(inf->ptr.win_ptr, 17, 1L << 17, end_game, &inf);
 	// mlx_loop(inf->ptr.mlx);
+}
+
+void	close_io(t_info *inf)
+{
+	int	i;
+
+	i = 0;
+	mlx_destroy_image(inf->ptr.mlx, inf->ptr.i_col);
+	mlx_destroy_image(inf->ptr.mlx, inf->ptr.i_lake);
+	mlx_destroy_image(inf->ptr.mlx, inf->ptr.i_floor);
+	mlx_destroy_image(inf->ptr.mlx, inf->ptr.i_exit);
+	mlx_destroy_image(inf->ptr.mlx, inf->ptr.i_wall);
+	mlx_destroy_image(inf->ptr.mlx, inf->ptr.i_plr);
+	mlx_destroy_image(inf->ptr.mlx, inf->ptr.i_pl);
+	mlx_destroy_image(inf->ptr.mlx, inf->ptr.i_pd);
+	mlx_destroy_image(inf->ptr.mlx, inf->ptr.i_pu);
+	mlx_destroy_image(inf->ptr.mlx, inf->ptr.i_psd);
+	mlx_destroy_image(inf->ptr.mlx, inf->ptr.i_psl);
+	mlx_destroy_image(inf->ptr.mlx, inf->ptr.i_pud);
+	mlx_destroy_image(inf->ptr.mlx, inf->ptr.i_pul);
+	mlx_destroy_image(inf->ptr.mlx, inf->ptr.i_dead);
+	mlx_destroy_image(inf->ptr.mlx, inf->ptr.i_open);
+	while (inf->matrix[i])
+	{
+		free(inf->matrix[i]);
+		i++;
+	}
+	get_next_line(-1);
+	free(inf->matrix[i]);
+	free(inf->matrix);
+	end_screen(inf);
+}
+
+int	end_game(t_info *inf)
+{
+	ft_printf("\naqui\n");
+	//mlx_destroy_image(inf->ptr.mlx, inf->ptr.i_win);
+	ft_printf("\naqui\n");
+	mlx_clear_window(inf->ptr.mlx, inf->ptr.win_ptr);
+	ft_printf("\naqui\n");
+	mlx_destroy_window(inf->ptr.mlx, inf->ptr.win_ptr);
+	ft_printf("\naqui\n");
+	mlx_destroy_display(inf->ptr.mlx);
+	exit (0);
 }

@@ -6,7 +6,7 @@
 /*   By: miandrad <miandrad@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 12:55:27 by miandrad          #+#    #+#             */
-/*   Updated: 2023/01/17 18:25:14 by miandrad         ###   ########.fr       */
+/*   Updated: 2023/01/17 18:20:23 by miandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include <fcntl.h>
 # include "get_next_line_100/get_next_line.h"
-# include "minilibx-linux/mlx.h"
+# include "mlx_linux/mlx.h"
 
 typedef struct s_info
 {
@@ -90,5 +90,7 @@ void	colect_food(t_info	*inf);
 void	animation(t_info *inf);
 void	end_check(t_info *info);
 void	end_screen(t_info *inf);
+void	close_io(t_info *inf);
+int	end_game(t_info *inf);
 
 #endif
