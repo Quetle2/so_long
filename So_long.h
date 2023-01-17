@@ -6,7 +6,7 @@
 /*   By: miandrad <miandrad@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 12:55:27 by miandrad          #+#    #+#             */
-/*   Updated: 2023/01/17 18:20:23 by miandrad         ###   ########.fr       */
+/*   Updated: 2023/01/17 18:44:45 by miandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,7 @@ void	ifs(t_info *inf, int i, int j);
 void	colect_food(t_info	*inf);
 void	animation(t_info *inf);
 void	end_check(t_info *info);
-void	end_screen(t_info *inf);
+void	end_screen(t_info inf);
 void	close_io(t_info *inf);
 int	end_game(t_info *inf);
 
