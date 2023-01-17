@@ -6,7 +6,7 @@
 /*   By: miandrad <miandrad@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 16:24:26 by miandrad          #+#    #+#             */
-/*   Updated: 2023/01/17 18:55:44 by miandrad         ###   ########.fr       */
+/*   Updated: 2023/01/17 19:01:54 by miandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,8 @@ int	close_com(t_info *inf)
 	int	i;
 
 	i = 0;
-	//mlx_destroy_image(inf->ptr.mlx, inf->ptr.i_col);
+	ft_printf("\naqui\n");
+	mlx_destroy_image(inf->ptr.mlx, inf->ptr.i_col);
 	mlx_destroy_image(inf->ptr.mlx, inf->ptr.i_win);
 	mlx_destroy_image(inf->ptr.mlx, inf->ptr.i_lake);
 	mlx_destroy_image(inf->ptr.mlx, inf->ptr.i_floor);
@@ -37,7 +38,6 @@ int	close_com(t_info *inf)
 	mlx_destroy_window(inf->ptr.mlx, inf->ptr.win_ptr);
 	mlx_destroy_display(inf->ptr.mlx);
 	free(inf->ptr.mlx);
-	ft_printf("aqui");
 	while (inf->matrix[i])
 	{
 		free(inf->matrix[i]);

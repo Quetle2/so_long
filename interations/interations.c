@@ -6,7 +6,7 @@
 /*   By: miandrad <miandrad@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 10:56:47 by ubuntu            #+#    #+#             */
-/*   Updated: 2023/01/17 18:55:22 by miandrad         ###   ########.fr       */
+/*   Updated: 2023/01/17 19:05:39 by miandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,3 +78,40 @@ void	end_screen(t_info *inf)
 	mlx_hook(inf->ptr.win_ptr, 17, 1L << 17, close_com, &inf);
 	// mlx_loop(inf->ptr.mlx);
 }
+
+// int	close_io(t_info *inf)
+// {
+// 	int	i;
+
+// 	i = 0;
+// 	// mlx_destroy_image(inf->ptr.mlx, inf->ptr.i_col);
+// 	// mlx_destroy_image(inf->ptr.mlx, inf->ptr.i_win);
+// 	// mlx_destroy_image(inf->ptr.mlx, inf->ptr.i_lake);
+// 	// mlx_destroy_image(inf->ptr.mlx, inf->ptr.i_floor);
+// 	// mlx_destroy_image(inf->ptr.mlx, inf->ptr.i_exit);
+// 	// mlx_destroy_image(inf->ptr.mlx, inf->ptr.i_wall);
+// 	// mlx_destroy_image(inf->ptr.mlx, inf->ptr.i_plr);
+// 	// mlx_destroy_image(inf->ptr.mlx, inf->ptr.i_pl);
+// 	// mlx_destroy_image(inf->ptr.mlx, inf->ptr.i_pd);
+// 	// mlx_destroy_image(inf->ptr.mlx, inf->ptr.i_pu);
+// 	// mlx_destroy_image(inf->ptr.mlx, inf->ptr.i_psd);
+// 	// mlx_destroy_image(inf->ptr.mlx, inf->ptr.i_psl);
+// 	// mlx_destroy_image(inf->ptr.mlx, inf->ptr.i_pud);
+// 	// mlx_destroy_image(inf->ptr.mlx, inf->ptr.i_pul);
+// 	// mlx_destroy_image(inf->ptr.mlx, inf->ptr.i_dead);
+// 	// mlx_destroy_image(inf->ptr.mlx, inf->ptr.i_open);
+// 	mlx_clear_window(inf->ptr.mlx, inf->ptr.win_ptr);
+// 	mlx_destroy_window(inf->ptr.mlx, inf->ptr.win_ptr);
+// 	mlx_destroy_display(inf->ptr.mlx);
+// 	free(inf->ptr.mlx);
+// 	while (inf->matrix[i])
+// 	{
+// 		free(inf->matrix[i]);
+// 		i++;
+// 	}
+// 	get_next_line(-1);
+// 	free(inf->matrix[i]);
+// 	free(inf->matrix);
+// 	write(1, "\nGAME OVER\n\n", 12);
+// 	exit(0);
+// }

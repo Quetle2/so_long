@@ -6,7 +6,7 @@
 /*   By: miandrad <miandrad@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 12:55:27 by miandrad          #+#    #+#             */
-/*   Updated: 2023/01/17 18:25:14 by miandrad         ###   ########.fr       */
+/*   Updated: 2023/01/17 19:03:06 by miandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,5 +90,6 @@ void	colect_food(t_info	*inf);
 void	animation(t_info *inf);
 void	end_check(t_info *info);
 void	end_screen(t_info *inf);
+int		close_io(t_info *inf);
 
 #endif
