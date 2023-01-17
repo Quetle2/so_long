@@ -6,7 +6,7 @@
 /*   By: miandrad <miandrad@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 10:56:47 by ubuntu            #+#    #+#             */
-/*   Updated: 2023/01/17 16:03:39 by miandrad         ###   ########.fr       */
+/*   Updated: 2023/01/17 17:43:48 by miandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,4 +54,9 @@ void	end_check(t_info *inf)
 		{
 			mlx_string_put(inf->ptr.mlx, inf->ptr.win_ptr, 100, 100, 255, "PARABIENS");
 		}
+}
+
+void	end_screen(t_info *inf)
+{
+
 }

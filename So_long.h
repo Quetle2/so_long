@@ -6,7 +6,7 @@
 /*   By: miandrad <miandrad@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 12:55:27 by miandrad          #+#    #+#             */
-/*   Updated: 2023/01/17 13:55:56 by miandrad         ###   ########.fr       */
+/*   Updated: 2023/01/17 17:43:57 by miandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ typedef struct s_info
 		void	*mlx;
 		void	*i_open;
 		void	*i_dead;
+		void	*i_win;
 		void	*i_floor;
 		void	*i_plr;
 		void	*i_pl;
@@ -86,5 +87,6 @@ void	ifs(t_info *inf, int i, int j);
 void	colect_food(t_info	*inf);
 void	animation(t_info *inf);
 void	end_check(t_info *info);
+void	end_screen(t_info *inf);
 
 #endif

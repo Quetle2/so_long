@@ -6,7 +6,7 @@
 #    By: miandrad <miandrad@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/07 13:59:27 by miandrad          #+#    #+#              #
-#    Updated: 2023/01/17 15:45:01 by miandrad         ###   ########.fr        #
+#    Updated: 2023/01/17 17:38:28 by miandrad         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -54,4 +54,4 @@ re: fclean all
 $(NAME): 
 	@make -s -C ft_printf_100
 #	@make -s -C minilibx-linux
-	@$(CC) -g $(CFLAGS) $(MAIN_SRC) $(addprefix animations/,$(ANM_SRC)) $(addprefix map_checker/,$(MAP_SRC)) $(addprefix get_next_line_100/,$(GNL_SRC)) ft_printf_100/libftprintf.a minilibx-linux/libmlx_Linux.a -lXext -lX11 -o $(NAME)
+	@$(CC) -g $(CFLAGS) $(MAIN_SRC) $(addprefix interations/,$(ANM_SRC)) $(addprefix map_checker/,$(MAP_SRC)) $(addprefix get_next_line_100/,$(GNL_SRC)) ft_printf_100/libftprintf.a minilibx-linux/libmlx_Linux.a -lXext -lX11 -o $(NAME)
