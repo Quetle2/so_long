@@ -6,7 +6,7 @@
 /*   By: miandrad <miandrad@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 12:55:27 by miandrad          #+#    #+#             */
-/*   Updated: 2023/01/17 18:44:45 by miandrad         ###   ########.fr       */
+/*   Updated: 2023/01/17 19:03:29 by miandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,11 +67,17 @@ typedef struct s_info
 	int			win_final;
 }t_info;
 
+// walking
 int		keydown(int keycode, t_info *plr_m);
 int		keyup(int keycode, t_info *plr_m);
 int		walkying(t_info *plr_m);
+
+// initialization and closure
 void	gameinit(t_info *game);
 int		close_com(t_info *game);
+void	close_io(t_info *inf);
+int		end_game(t_info *inf);
+int		escape_for_the_win(int keycode, t_info *inf);
 
 // map cpy and check;
 char	**map_cpy(int fd, t_info *map, char *path);
@@ -84,13 +90,11 @@ void	sprite_atribution(t_info *inf);
 void	img_to_window(t_info *inf);
 void	img_render(t_info *inf);
 void	ifs(t_info *inf, int i, int j);
+void	end_screen(t_info inf);
 
 // interactions and animations
 void	colect_food(t_info	*inf);
 void	animation(t_info *inf);
-void	end_check(t_info *info);
-void	end_screen(t_info inf);
-void	close_io(t_info *inf);
-int	end_game(t_info *inf);
+void	end_check(t_info *inf);
 
 #endif

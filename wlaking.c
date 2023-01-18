@@ -6,7 +6,7 @@
 /*   By: miandrad <miandrad@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 14:45:22 by miandrad          #+#    #+#             */
-/*   Updated: 2023/01/17 18:04:51 by miandrad         ###   ########.fr       */
+/*   Updated: 2023/01/17 19:00:40 by miandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,5 +69,22 @@ int	walkying(t_info *inf)
 	}
 	else if (inf->end == 1)
 		close_io(inf);
+	return (0);
+}
+
+int	end_game(t_info *inf)
+{
+	mlx_destroy_image(inf->ptr.mlx, inf->ptr.i_win);
+	mlx_clear_window(inf->ptr.mlx, inf->ptr.win_ptr);
+	mlx_destroy_window(inf->ptr.mlx, inf->ptr.win_ptr);
+	mlx_destroy_display(inf->ptr.mlx);
+	free(inf->ptr.mlx);
+	exit (0);
+}
+
+int	escape_for_the_win(int keycode, t_info *inf)
+{
+	if (keycode == 65307)
+		end_game(inf);
 	return (0);
 }
