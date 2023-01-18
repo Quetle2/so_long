@@ -6,7 +6,7 @@
 /*   By: miandrad <miandrad@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 14:45:22 by miandrad          #+#    #+#             */
-/*   Updated: 2023/01/17 17:59:10 by miandrad         ###   ########.fr       */
+/*   Updated: 2023/01/18 13:35:21 by miandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,6 @@ int	walkying(t_info *inf)
 	end_check(inf);
 	}
 	else if (inf->end == 1)
-		end_screen(inf);
+		end_screen(*inf);
 	return (0);
 }

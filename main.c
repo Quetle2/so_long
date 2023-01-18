@@ -5,10 +5,11 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: miandrad <miandrad@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/02 16:24:26 by miandrad          #+#    #+#             */
-/*   Updated: 2023/01/17 19:01:54 by miandrad         ###   ########.fr       */
+/*   Created: 2023/01/18 13:23:08 by miandrad          #+#    #+#             */
+/*   Updated: 2023/01/18 14:20:55 by miandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 #include "So_long.h"
 
@@ -17,9 +18,8 @@ int	close_com(t_info *inf)
 	int	i;
 
 	i = 0;
-	ft_printf("\naqui\n");
-	mlx_destroy_image(inf->ptr.mlx, inf->ptr.i_col);
 	mlx_destroy_image(inf->ptr.mlx, inf->ptr.i_win);
+	mlx_destroy_image(inf->ptr.mlx, inf->ptr.i_col);
 	mlx_destroy_image(inf->ptr.mlx, inf->ptr.i_lake);
 	mlx_destroy_image(inf->ptr.mlx, inf->ptr.i_floor);
 	mlx_destroy_image(inf->ptr.mlx, inf->ptr.i_exit);
