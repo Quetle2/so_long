@@ -6,7 +6,7 @@
 /*   By: miandrad <miandrad@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 10:56:47 by ubuntu            #+#    #+#             */
-/*   Updated: 2023/01/17 19:08:39 by miandrad         ###   ########.fr       */
+/*   Updated: 2023/01/17 19:19:03 by miandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	colect_food(t_info *inf)
 	if (inf->matrix[(inf->plr.p_y / 64)][((inf->plr.p_x + 19) / 64)] == 'c')
 		{
 			inf->map.food--;
-			inf->matrix[(inf->plr.p_y / 64)][((inf->plr.p_x + 39) / 64)] = 'C';
+			inf->matrix[(inf->plr.p_y / 64)][((inf->plr.p_x + 19) / 64)] = 'C';
 		}
 	else if (inf->matrix[((inf->plr.p_y + 19) / 64)][(inf->plr.p_x / 64)] == 'c')
 		{
