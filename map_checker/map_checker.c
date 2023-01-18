@@ -6,7 +6,7 @@
 /*   By: miandrad <miandrad@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 17:11:16 by miandrad          #+#    #+#             */
-/*   Updated: 2023/01/16 12:01:02 by miandrad         ###   ########.fr       */
+/*   Updated: 2023/01/18 15:51:44 by miandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,8 +53,11 @@ int	check_cpe(t_info *inf)
 		while (inf->matrix[inf->i][j])
 		{
 			if (inf->matrix[inf->i][j] != 'C' && inf->matrix[inf->i][j] != 'P'
-				&& inf->matrix[inf->i][j] != 'E' && inf->matrix[inf->i][j] != '0'
-				&& inf->matrix[inf->i][j] != '1' && inf->matrix[inf->i][j] != '\n')
+				&& inf->matrix[inf->i][j] != 'E'
+				&& inf->matrix[inf->i][j] != '0'
+				&& inf->matrix[inf->i][j] != '1'
+				&& inf->matrix[inf->i][j] != '\n'
+				&& inf->matrix[inf->i][j] != 'I')
 				return (0);
 			if (inf->matrix[inf->i][j] == 'C')
 				inf->map.food++;

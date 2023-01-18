@@ -6,7 +6,7 @@
 #    By: miandrad <miandrad@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/07 13:59:27 by miandrad          #+#    #+#              #
-#    Updated: 2023/01/17 17:55:08 by miandrad         ###   ########.fr        #
+#    Updated: 2023/01/18 14:45:39 by miandrad         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,7 +39,7 @@ run:	all
 	@./so_long map.ber
 
 valgrind:	all
-	@valgrind --leak-check=yes --leak-check=full --track-origins=yes ./so_long map.ber
+	@valgrind --leak-check=yes --leak-check=full --show-leak-kinds=all --track-origins=yes ./so_long map.ber
 
 clean:
 	@make clean -s -C ft_printf_100

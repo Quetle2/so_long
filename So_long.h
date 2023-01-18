@@ -6,7 +6,7 @@
 /*   By: miandrad <miandrad@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 13:18:41 by miandrad          #+#    #+#             */
-/*   Updated: 2023/01/18 13:21:20 by miandrad         ###   ########.fr       */
+/*   Updated: 2023/01/18 16:26:33 by miandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,6 @@ void	gameinit(t_info *game);
 int		close_com(t_info *game);
 void	close_io(t_info *inf);
 int		end_game(t_info *inf);
-int		escape_for_the_win(int keycode, t_info *inf);
 
 // map cpy and check;
 char	**map_cpy(int fd, t_info *map, char *path);
@@ -97,5 +96,8 @@ void	colect_food(t_info	*inf);
 void	animation(t_info *inf);
 void	end_check(t_info *inf);
 
+void	close_first_window(t_info *inf);
+int		end_game(t_info *inf);
+void	display_victory(t_info inf);
 
 #endif
