@@ -6,7 +6,7 @@
 /*   By: miandrad <miandrad@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 14:45:22 by miandrad          #+#    #+#             */
-/*   Updated: 2023/01/19 18:50:46 by miandrad         ###   ########.fr       */
+/*   Updated: 2023/01/19 16:13:31 by miandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ int	walkying(t_info *inf)
 			inf->plr.p_x++;
 		mlx_string_put(inf->ptr.mlx, inf->ptr.win_ptr,
 			(((inf->map.width - 2) * 64) - 32),
-			(inf->map.height * 64) - 26, 999999, "NUMBER OF MOVEMENTS : ");
+			(inf->map.height * 64) - 26, 999, "NUMBER OF MOVEMENTS : ");
 		colect_food(inf);
 		mlx_put_image_to_window(inf->ptr.mlx, inf->ptr.win_ptr,
 			inf->ptr.i_plr, inf->plr.p_x, inf->plr.p_y);

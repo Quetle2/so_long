@@ -6,7 +6,7 @@
 /*   By: miandrad <miandrad@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 13:23:08 by miandrad          #+#    #+#             */
-/*   Updated: 2023/01/19 17:14:36 by miandrad         ###   ########.fr       */
+/*   Updated: 2023/01/19 16:15:40 by miandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,7 @@ void	gameinit(t_info *inf)
 	inf->plr.p_y = 0;
 	inf->ptr.mlx = NULL;
 	inf->ptr.win_ptr = NULL;
+	inf->ptr.win_ptr2 = NULL;
 	inf->ptr.i_floor = NULL;
 	inf->i = 0;
 	inf->j = 0;
