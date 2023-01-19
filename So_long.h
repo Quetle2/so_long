@@ -6,7 +6,7 @@
 /*   By: miandrad <miandrad@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 13:18:41 by miandrad          #+#    #+#             */
-/*   Updated: 2023/01/18 16:26:33 by miandrad         ###   ########.fr       */
+/*   Updated: 2023/01/19 15:45:12 by miandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,9 @@ typedef struct s_info
 	struct s_ptr
 	{
 		void	*win_ptr;
+		void	*win_ptr2;
 		void	*mlx;
+		void	*mlx2;
 		void	*i_open;
 		void	*i_dead;
 		void	*i_win;
@@ -98,6 +100,9 @@ void	end_check(t_info *inf);
 
 void	close_first_window(t_info *inf);
 int		end_game(t_info *inf);
-void	display_victory(t_info inf);
+void	display_victory(t_info *inf);
+
+void	work(t_info *inf);
+
 
 #endif
