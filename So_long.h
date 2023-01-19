@@ -6,7 +6,7 @@
 /*   By: miandrad <miandrad@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 13:18:41 by miandrad          #+#    #+#             */
-/*   Updated: 2023/01/19 15:45:12 by miandrad         ###   ########.fr       */
+/*   Updated: 2023/01/19 15:50:34 by miandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,9 +100,6 @@ void	end_check(t_info *inf);
 
 void	close_first_window(t_info *inf);
 int		end_game(t_info *inf);
-void	display_victory(t_info *inf);
-
-void	work(t_info *inf);
-
+void	display_victory(t_info inf);
 
 #endif

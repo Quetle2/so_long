@@ -6,7 +6,7 @@
 /*   By: miandrad <miandrad@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 14:45:22 by miandrad          #+#    #+#             */
-/*   Updated: 2023/01/19 15:45:01 by miandrad         ###   ########.fr       */
+/*   Updated: 2023/01/19 17:00:41 by miandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,6 @@ int	keyup(int keycode, t_info *inf)
 
 int	walkying(t_info *inf)
 {
-	// mlx_clear_window(inf->ptr.mlx, inf->ptr.win_ptr);
 	if (inf->end == 0)
 	{
 		img_render(inf);
@@ -77,6 +76,9 @@ int	walkying(t_info *inf)
 		end_check(inf);
 	}
 	else if (inf->end == 1)
-		work(inf);
+	{
+		inf->end++;
+		display_victory(*inf);
+	}
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: miandrad <miandrad@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 13:23:08 by miandrad          #+#    #+#             */
-/*   Updated: 2023/01/19 15:41:43 by miandrad         ###   ########.fr       */
+/*   Updated: 2023/01/19 17:14:36 by miandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,14 +34,18 @@ int	close_com(t_info *inf)
 	mlx_destroy_image(inf->ptr.mlx, inf->ptr.i_pul);
 	mlx_destroy_image(inf->ptr.mlx, inf->ptr.i_dead);
 	mlx_destroy_image(inf->ptr.mlx, inf->ptr.i_open);
-	// mlx_clear_window(inf->ptr.mlx, inf->ptr.win_ptr);
-	// mlx_destroy_window(inf->ptr.mlx, inf->ptr.win_ptr);
-	// mlx_destroy_display(inf->ptr.mlx);
-	mlx_clear_window(inf->ptr.mlx2, inf->ptr.win_ptr2);
-	mlx_destroy_window(inf->ptr.mlx2, inf->ptr.win_ptr2);
-	mlx_destroy_display(inf->ptr.mlx2);
+	if (inf->ptr.win_ptr)
+	{
+		mlx_clear_window(inf->ptr.mlx, inf->ptr.win_ptr);
+		mlx_destroy_window(inf->ptr.mlx, inf->ptr.win_ptr);
+	}
+	if (inf->ptr.win_ptr2)
+	{	
+		mlx_clear_window(inf->ptr.mlx, inf->ptr.win_ptr2);
+		mlx_destroy_window(inf->ptr.mlx, inf->ptr.win_ptr2);
+	}
+	mlx_destroy_display(inf->ptr.mlx);
 	free(inf->ptr.mlx);
-	free(inf->ptr.mlx2);
 	while (inf->matrix[i])
 	{
 		free(inf->matrix[i]);
