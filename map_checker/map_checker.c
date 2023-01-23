@@ -6,7 +6,7 @@
 /*   By: miandrad <miandrad@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 17:11:16 by miandrad          #+#    #+#             */
-/*   Updated: 2023/01/20 14:45:46 by miandrad         ###   ########.fr       */
+/*   Updated: 2023/01/23 14:50:17 by miandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,8 @@ int	check_cpe(t_info *inf)
 				&& inf->matrix[inf->i][j] != '0'
 				&& inf->matrix[inf->i][j] != '1'
 				&& inf->matrix[inf->i][j] != '\n'
-				&& inf->matrix[inf->i][j] != 'I')
+				&& inf->matrix[inf->i][j] != 'I'
+				&& inf->matrix[inf->i][j] != 'G')
 				return (0);
 			if (inf->matrix[inf->i][j] == 'C')
 				inf->map.food++;
@@ -118,8 +119,9 @@ int	check_path_more(t_info *inf)
 		j = 0;
 		while (inf->matrix[i][j])
 		{
-			if (inf->matrix[i][j] == 'C' || inf->matrix[i][j] == 'P' || inf->matrix[i][j] == 'E')
-				return(0);
+			if (inf->matrix[i][j] == 'C' || inf->matrix[i][j] == 'P'
+				|| inf->matrix[i][j] == 'E')
+				return (0);
 			j++;
 		}
 		i++;

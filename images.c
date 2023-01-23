@@ -6,7 +6,7 @@
 /*   By: miandrad <miandrad@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 14:34:07 by miandrad          #+#    #+#             */
-/*   Updated: 2023/01/20 17:06:08 by miandrad         ###   ########.fr       */
+/*   Updated: 2023/01/23 14:50:40 by miandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void	ifs(t_info *inf, int i, int j)
 	else if (inf->matrix[i][j] == 'c')
 		mlx_put_image_to_window(inf->ptr.mlx, inf->ptr.win_ptr, inf->ptr.i_col,
 			j * 64, i * 64);
-	else if (inf->matrix[i][j] == '0')
+	else if (inf->matrix[i][j] == '0' || inf->matrix[i][j] == 'G')
 		mlx_put_image_to_window(inf->ptr.mlx, inf->ptr.win_ptr, inf->ptr.i_lake,
 			j * 64, i * 64);
 	else if (inf->matrix[i][j] == 'e')

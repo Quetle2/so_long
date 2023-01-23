@@ -6,7 +6,7 @@
 /*   By: miandrad <miandrad@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 13:18:41 by miandrad          #+#    #+#             */
-/*   Updated: 2023/01/20 16:26:30 by miandrad         ###   ########.fr       */
+/*   Updated: 2023/01/23 16:22:01 by miandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,6 @@ typedef struct s_info
 		void	*win_ptr;
 		void	*win_ptr2;
 		void	*mlx;
-		void	*mlx2;
 		void	*i_open;
 		void	*i_dead;
 		void	*i_win;
@@ -101,11 +100,13 @@ void	img_to_window(t_info *inf);
 void	img_render(t_info *inf);
 void	ifs(t_info *inf, int i, int j);
 void	end_screen(t_info inf);
+void	show_steps(t_info *inf);
 
 // interactions and animations
 void	colect_food(t_info	*inf);
 void	animation(t_info *inf);
 void	end_check(t_info *inf);
 void	display_victory(t_info inf);
+void	enemy_check(t_info *inf);
 
 #endif

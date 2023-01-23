@@ -6,7 +6,7 @@
 /*   By: miandrad <miandrad@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 13:37:59 by miandrad          #+#    #+#             */
-/*   Updated: 2023/01/20 16:30:08 by miandrad         ###   ########.fr       */
+/*   Updated: 2023/01/23 13:47:58 by miandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,7 @@ int	main(int argc, char **argv)
 		return (0);
 	}
 	sprite_atribution(&inf);
+	mlx_do_key_autorepeatoff(inf.ptr.mlx);
 	img_to_window(&inf);
 	mlx_hook(inf.ptr.win_ptr, 2, 1L << 0, keydown, &inf);
 	mlx_hook(inf.ptr.win_ptr, 3, 1L << 1, keyup, &inf);

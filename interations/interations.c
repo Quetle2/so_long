@@ -6,7 +6,7 @@
 /*   By: miandrad <miandrad@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 13:23:21 by miandrad          #+#    #+#             */
-/*   Updated: 2023/01/19 17:18:41 by miandrad         ###   ########.fr       */
+/*   Updated: 2023/01/23 16:23:20 by miandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,4 +67,31 @@ void	display_victory(t_info inf)
 	mlx_hook(inf.ptr.win_ptr2, 2, 1L << 0, keydown, &inf);
 	mlx_hook(inf.ptr.win_ptr2, 17, 1L << 17, close_com, &inf);
 	mlx_loop(inf.ptr.mlx);
+}
+
+void	enemy_check(t_info *inf)
+{
+	if (inf->matrix[(inf->plr.p_y / 64)][((inf->plr.p_x + 19) / 64)] == 'G')
+	{
+		ft_printf("\nYou dead\n");
+		close_com(inf);
+	}
+	if (inf->matrix[((inf->plr.p_y + 19) / 64)]
+		[(inf->plr.p_x / 64)] == 'G')
+	{
+		ft_printf("\nYou dead\n");
+		close_com(inf);
+	}
+	if (inf->matrix[((inf->plr.p_y + 39) / 64)]
+		[((inf->plr.p_x + 19) / 64)] == 'G')
+	{
+		ft_printf("\nYou dead\n");
+		close_com(inf);
+	}
+	if (inf->matrix[((inf->plr.p_y + 39) / 64)]
+		[((inf->plr.p_x + 19) / 64)] == 'G')
+	{
+		ft_printf("\nYou dead\n");
+		close_com(inf);
+	}
 }
