@@ -6,7 +6,7 @@
 /*   By: miandrad <miandrad@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 14:34:07 by miandrad          #+#    #+#             */
-/*   Updated: 2023/01/18 15:59:24 by miandrad         ###   ########.fr       */
+/*   Updated: 2023/01/20 17:06:08 by miandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,32 +14,17 @@
 
 void	sprite_atribution(t_info *inf)
 {
+	sprite_atribution_helper(inf);
 	inf->ptr.i_open = mlx_xpm_file_to_image(inf->ptr.mlx,
-		"images/e.xpm", &inf->pixel, &inf->pixel);
+			"images/e.xpm", &inf->pixel, &inf->pixel);
 	inf->ptr.i_win = mlx_xpm_file_to_image(inf->ptr.mlx,
-		"images/Win.xpm", &inf->win_final, &inf->win_final);
+			"images/Win.xpm", &inf->win_final, &inf->win_final);
 	inf->ptr.i_dead = mlx_xpm_file_to_image(inf->ptr.mlx,
-		"images/dead.xpm", &inf->pixel, &inf->pixel);
+			"images/dead.xpm", &inf->pixel, &inf->pixel);
 	inf->ptr.i_lake = mlx_xpm_file_to_image(inf->ptr.mlx,
 			"images/-.xpm", &inf->pixel, &inf->pixel);
 	inf->ptr.i_floor = mlx_xpm_file_to_image(inf->ptr.mlx,
 			"images/0.xpm", &inf->pixel, &inf->pixel);
-	inf->ptr.i_plr = mlx_xpm_file_to_image(inf->ptr.mlx,
-			"images/P.xpm", &inf->pixel, &inf->pixel);
-	inf->ptr.i_pl = mlx_xpm_file_to_image(inf->ptr.mlx,
-			"images/Pl.xpm", &inf->pixel, &inf->pixel);
-	inf->ptr.i_pd = mlx_xpm_file_to_image(inf->ptr.mlx,
-			"images/Pd.xpm", &inf->pixel, &inf->pixel);
-	inf->ptr.i_pu = mlx_xpm_file_to_image(inf->ptr.mlx,
-			"images/Pu.xpm", &inf->pixel, &inf->pixel);
-	inf->ptr.i_pud = mlx_xpm_file_to_image(inf->ptr.mlx,
-			"images/Pud.xpm", &inf->pixel, &inf->pixel);
-	inf->ptr.i_pul = mlx_xpm_file_to_image(inf->ptr.mlx,
-			"images/Plu.xpm", &inf->pixel, &inf->pixel);
-	inf->ptr.i_psl = mlx_xpm_file_to_image(inf->ptr.mlx,
-			"images/Pls.xpm", &inf->pixel, &inf->pixel);
-	inf->ptr.i_psd = mlx_xpm_file_to_image(inf->ptr.mlx,
-			"images/Pds.xpm", &inf->pixel, &inf->pixel);
 	inf->ptr.i_exit = mlx_xpm_file_to_image(inf->ptr.mlx,
 			"images/E.xpm", &inf->pixel, &inf->pixel);
 	inf->ptr.i_wall = mlx_xpm_file_to_image(inf->ptr.mlx,
@@ -97,4 +82,5 @@ void	img_render(t_info *inf)
 	if (inf->map.food == 0)
 		inf->matrix[inf->map.end_y][inf->map.end_x] = 'E';
 	ifs(inf, inf->map.end_y, inf->map.end_x);
+	ifs(inf, inf->map.height - 1, inf->map.width - 1);
 }

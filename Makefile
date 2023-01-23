@@ -6,7 +6,7 @@
 #    By: miandrad <miandrad@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/07 13:59:27 by miandrad          #+#    #+#              #
-#    Updated: 2023/01/18 14:45:39 by miandrad         ###   ########.fr        #
+#    Updated: 2023/01/20 15:33:07 by miandrad         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,7 @@ CFLAGS = -Wall -Wextra -Werror
 
 ANM_SRC = interations.c animations.c
 
-MAIN_SRC = main.c wlaking.c images.c
+MAIN_SRC = main.c wlaking.c images.c helper.c
 
 GNL_SRC = get_next_line_utils.c get_next_line.c
 

@@ -6,7 +6,7 @@
 /*   By: miandrad <miandrad@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 13:18:41 by miandrad          #+#    #+#             */
-/*   Updated: 2023/01/19 15:50:34 by miandrad         ###   ########.fr       */
+/*   Updated: 2023/01/20 16:26:30 by miandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,14 @@ typedef struct s_info
 	int			end;
 	int			pixel;
 	int			win_final;
+	size_t		steps;
 }t_info;
+
+// helpers
+void	main_helper(t_info *inf, char **argv);
+void	close_com_helper(t_info *inf);
+void	sprite_atribution_helper(t_info *inf);
+void	walkying_helper(t_info *inf);
 
 // walking
 int		keydown(int keycode, t_info *plr_m);
@@ -85,6 +92,8 @@ char	**map_cpy(int fd, t_info *map, char *path);
 int		wall_check(t_info *inf);
 int		check_cpe(t_info *inf);
 int		check_path(int i, int j, t_info *inf);
+int		check_path_more(t_info *inf);
+void	free_map(t_info *inf);
 
 // img display
 void	sprite_atribution(t_info *inf);
@@ -97,9 +106,6 @@ void	end_screen(t_info inf);
 void	colect_food(t_info	*inf);
 void	animation(t_info *inf);
 void	end_check(t_info *inf);
-
-void	close_first_window(t_info *inf);
-int		end_game(t_info *inf);
 void	display_victory(t_info inf);
 
 #endif
