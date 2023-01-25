@@ -6,7 +6,7 @@
 /*   By: miandrad <miandrad@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 13:18:41 by miandrad          #+#    #+#             */
-/*   Updated: 2023/01/25 14:13:47 by miandrad         ###   ########.fr       */
+/*   Updated: 2023/01/25 16:42:10 by miandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ typedef struct s_info
 }t_info;
 
 // helpers
-void	main_helper(t_info *inf, char **argv);
+int		main_helper(t_info *inf, char **argv);
 void	close_com_helper(t_info *inf);
 void	sprite_atribution_helper(t_info *inf);
 void	walkying_helper(t_info *inf);

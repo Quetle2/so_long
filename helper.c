@@ -6,16 +6,22 @@
 /*   By: miandrad <miandrad@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 15:31:16 by miandrad          #+#    #+#             */
-/*   Updated: 2023/01/23 13:16:48 by miandrad         ###   ########.fr       */
+/*   Updated: 2023/01/25 18:03:48 by miandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "So_long.h"
 
-void	main_helper(t_info *inf, char **argv)
+int	main_helper(t_info *inf, char **argv)
 {
 	int		fd;
 
+	if (ft_strlen(argv[1]) < 4 || !ft_strnstr(argv[1] + ft_strlen(argv[1]) - 4,
+			".ber", 4))
+	{
+		write(1, "\nError\nThe map file doesn't have the .ber extension\n\n", 54);
+		return (0);
+	}
 	gameinit(inf);
 	fd = open(argv[1], O_RDONLY);
 	inf->matrix = map_cpy(fd, inf, argv[1]);
@@ -32,6 +38,7 @@ void	main_helper(t_info *inf, char **argv)
 		ft_printf("%s", inf->matrix[inf->i]);
 		inf->i++;
 	}
+	return (1);
 }
 
 void	close_com_helper(t_info *inf)

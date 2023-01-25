@@ -6,7 +6,7 @@
 /*   By: miandrad <miandrad@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 13:37:59 by miandrad          #+#    #+#             */
-/*   Updated: 2023/01/25 13:05:51 by miandrad         ###   ########.fr       */
+/*   Updated: 2023/01/25 16:44:29 by miandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,10 @@ int	main(int argc, char **argv)
 
 	if (argc != 2)
 		return (0);
-	main_helper(&inf, argv);
+	if (!main_helper(&inf, argv))
+	{
+		return (0);
+	}
 	inf.ptr.mlx = mlx_init();
 	inf.ptr.win_ptr = mlx_new_window(inf.ptr.mlx, (inf.map.width) * 64,
 			(inf.map.height) * 64, "ola");
