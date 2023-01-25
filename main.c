@@ -6,7 +6,7 @@
 /*   By: miandrad <miandrad@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 13:37:59 by miandrad          #+#    #+#             */
-/*   Updated: 2023/01/23 13:47:58 by miandrad         ###   ########.fr       */
+/*   Updated: 2023/01/25 13:05:51 by miandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,7 @@ void	gameinit(t_info *inf)
 	inf->pixel = 64;
 	inf->win_final = 1500;
 	inf->steps = 0;
+	inf->longi = 0;
 }
 
 int	main(int argc, char **argv)

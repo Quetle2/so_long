@@ -6,7 +6,7 @@
 /*   By: miandrad <miandrad@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 13:18:41 by miandrad          #+#    #+#             */
-/*   Updated: 2023/01/23 16:22:01 by miandrad         ###   ########.fr       */
+/*   Updated: 2023/01/25 14:13:47 by miandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,7 @@ typedef struct s_info
 		int		p_y;
 	}plr;
 	int			i;
+	long long	longi;
 	int			j;
 	int			end;
 	int			pixel;
@@ -74,6 +75,7 @@ void	main_helper(t_info *inf, char **argv);
 void	close_com_helper(t_info *inf);
 void	sprite_atribution_helper(t_info *inf);
 void	walkying_helper(t_info *inf);
+int		moreee(t_info *inf, int *p, int *e, int *j);
 
 // walking
 int		keydown(int keycode, t_info *plr_m);

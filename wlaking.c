@@ -6,7 +6,7 @@
 /*   By: miandrad <miandrad@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 14:45:22 by miandrad          #+#    #+#             */
-/*   Updated: 2023/01/23 16:22:10 by miandrad         ###   ########.fr       */
+/*   Updated: 2023/01/25 14:37:22 by miandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,12 +43,14 @@ int	keyup(int keycode, t_info *inf)
 
 int	walkying(t_info *inf)
 {
-
 	if (inf->end == 0)
 	{
 		walkying_helper(inf);
 		show_steps(inf);
-		usleep(16666);
+		inf->longi = 0;
+		while (inf->longi++ < 1666666)
+		{
+		}
 		colect_food(inf);
 		enemy_check(inf);
 		mlx_put_image_to_window(inf->ptr.mlx, inf->ptr.win_ptr,
@@ -68,9 +70,9 @@ void	show_steps(t_info *inf)
 	mov = ft_itoa(inf->steps);
 	mlx_string_put(inf->ptr.mlx, inf->ptr.win_ptr,
 		(((inf->map.width - 2) * 64) - 32),
-		(inf->map.height * 64) - 26, 11111111, "NUMBER OF MOVEMENTS : ");
+		(inf->map.height * 64) - 26, 16777215, "NUMBER OF MOVEMENTS : ");
 	mlx_string_put(inf->ptr.mlx, inf->ptr.win_ptr,
 		((inf->map.width * 64) - 25),
-		(inf->map.height * 64) - 26, 11111111, mov);
+		(inf->map.height * 64) - 26, 16777215, mov);
 	free(mov);
 }

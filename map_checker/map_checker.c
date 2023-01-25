@@ -6,7 +6,7 @@
 /*   By: miandrad <miandrad@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 17:11:16 by miandrad          #+#    #+#             */
-/*   Updated: 2023/01/23 14:50:17 by miandrad         ###   ########.fr       */
+/*   Updated: 2023/01/25 14:19:02 by miandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,33 +49,9 @@ int	check_cpe(t_info *inf)
 	e = 0;
 	while (inf->matrix[inf->i])
 	{
-		j = 0;
-		while (inf->matrix[inf->i][j])
-		{
-			if (inf->matrix[inf->i][j] != 'C' && inf->matrix[inf->i][j] != 'P'
-				&& inf->matrix[inf->i][j] != 'E'
-				&& inf->matrix[inf->i][j] != '0'
-				&& inf->matrix[inf->i][j] != '1'
-				&& inf->matrix[inf->i][j] != '\n'
-				&& inf->matrix[inf->i][j] != 'I'
-				&& inf->matrix[inf->i][j] != 'G')
-				return (0);
-			if (inf->matrix[inf->i][j] == 'C')
-				inf->map.food++;
-			if (inf->matrix[inf->i][j] == 'P')
-			{
-				p++;
-				inf->plr.x = j;
-				inf->plr.y = inf->i;
-			}
-			if (inf->matrix[inf->i][j] == 'E')
-			{
-				e++;
-				inf->map.end_x = j;
-				inf->map.end_y = inf->i;
-			}
-			j++;
-		}
+		j = -1;
+		if (!moreee(inf, &p, &e, &j))
+			return (0);
 		inf->i++;
 	}
 	if (inf->map.food != 0 && p == 1 && e == 1)
@@ -125,6 +101,33 @@ int	check_path_more(t_info *inf)
 			j++;
 		}
 		i++;
+	}
+	return (1);
+}
+
+int	moreee(t_info *inf, int *p, int *e, int *j)
+{
+	while (inf->matrix[inf->i][++*j])
+	{
+		if (inf->matrix[inf->i][*j] != 'C' && inf->matrix[inf->i][*j] != 'P'
+			&& inf->matrix[inf->i][*j] != 'E' && inf->matrix[inf->i][*j] != '0'
+			&& inf->matrix[inf->i][*j] != '1' && inf->matrix[inf->i][*j] != '\n'
+			&& inf->matrix[inf->i][*j] != 'I' && inf->matrix[inf->i][*j] != 'G')
+			return (0);
+		if (inf->matrix[inf->i][*j] == 'C')
+			inf->map.food++;
+		if (inf->matrix[inf->i][*j] == 'P')
+		{
+			(*p)++;
+			inf->plr.x = *j;
+			inf->plr.y = inf->i;
+		}
+		if (inf->matrix[inf->i][*j] == 'E')
+		{
+			(*e)++;
+			inf->map.end_x = *j;
+			inf->map.end_y = inf->i;
+		}
 	}
 	return (1);
 }
