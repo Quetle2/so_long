@@ -6,7 +6,7 @@
 /*   By: miandrad <miandrad@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 15:31:16 by miandrad          #+#    #+#             */
-/*   Updated: 2023/01/25 18:03:48 by miandrad         ###   ########.fr       */
+/*   Updated: 2023/01/26 16:40:11 by miandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,11 +33,6 @@ int	main_helper(t_info *inf, char **argv)
 	inf->i = 0;
 	inf->plr.p_x = inf->plr.x * 64;
 	inf->plr.p_y = inf->plr.y * 64;
-	while (inf->matrix[inf->i])
-	{
-		ft_printf("%s", inf->matrix[inf->i]);
-		inf->i++;
-	}
 	return (1);
 }
 

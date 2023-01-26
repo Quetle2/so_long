@@ -6,7 +6,7 @@
 /*   By: miandrad <miandrad@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 14:45:22 by miandrad          #+#    #+#             */
-/*   Updated: 2023/01/25 14:37:22 by miandrad         ###   ########.fr       */
+/*   Updated: 2023/01/26 16:45:46 by miandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 
 int	keydown(int keycode, t_info *inf)
 {
-	inf->steps++;
+	if (ft_strchr("awsd", keycode))
+		inf->steps++;
 	if (keycode == 'a')
 		inf->plr.a = 1;
 	else if (keycode == 'w')

@@ -6,16 +6,9 @@
 #    By: miandrad <miandrad@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/07 13:59:27 by miandrad          #+#    #+#              #
-#    Updated: 2023/01/25 18:17:54 by miandrad         ###   ########.fr        #
+#    Updated: 2023/01/26 16:39:26 by miandrad         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
-
-# animation idea:
-#
-# using lists and the map checker. Look for the block with animation, 
-# change the sprite with every call of function render iterating the list.
-# PS: need a way to return to the top of the list after wich cycle of sprites.
-
 
 NAME = so_long
 
