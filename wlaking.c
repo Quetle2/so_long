@@ -6,7 +6,7 @@
 /*   By: miandrad <miandrad@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 14:45:22 by miandrad          #+#    #+#             */
-/*   Updated: 2023/01/26 16:45:46 by miandrad         ###   ########.fr       */
+/*   Updated: 2023/01/26 18:26:01 by miandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ int	walkying(t_info *inf)
 		walkying_helper(inf);
 		show_steps(inf);
 		inf->longi = 0;
-		while (inf->longi++ < 1666666)
+		while (inf->longi++ < 166666)
 		{
 		}
 		colect_food(inf);
